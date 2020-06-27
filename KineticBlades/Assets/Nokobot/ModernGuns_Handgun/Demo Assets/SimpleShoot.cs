@@ -22,7 +22,7 @@ public class SimpleShoot : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (OVRInput.GetDown(OVRInput.Button.Any, OVRInput.Controller.RTouch))
         {
             GetComponent<Animator>().SetTrigger("Fire");
         }
@@ -35,10 +35,25 @@ public class SimpleShoot : MonoBehaviour
         // bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
 
         GameObject tempFlash;
-       Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-       tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+        if (bulletPrefab)
+        Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+        tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
-       // Destroy(tempFlash, 0.5f);
+        RaycastHit hitInfo;
+        bool hasHit = Physics.Raycast(barrelLocation.position, barrelLocation.forward, out hitInfo, 100);
+
+        /* TODO
+        bool line = true;
+        if (line)
+        {
+            GameObject liner = Instantiate(line);
+            liner.GetComponent<LineRenderer>().SetPosition(new Vector3[] { barrelLocation.position, hasHit ? hitInfo.point : barrelLocation.position + barrelLocation.forward * 100 });
+            Destroy(liner, 0.5f);
+
+        }
+        */
+
+        // Destroy(tempFlash, 0.5f);
         //  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
        
     }
