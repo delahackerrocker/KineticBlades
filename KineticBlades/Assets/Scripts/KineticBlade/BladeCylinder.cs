@@ -48,16 +48,21 @@ public class BladeCylinder : MonoBehaviour
     public float AddEnergy(float newEnergy)
     {
         float leftOverEnergy = 0;
-
-        energyPool += newEnergy;
-
-        if (energyPool > energyMax)
+        if (isDisintegrating)
         {
-            energyIsFull = true;
-            leftOverEnergy = energyPool - energyMax;
-            energyPool = energyMax;
+            // already disintegrating
         }
+        else
+        {
+            energyPool += newEnergy;
 
+            if (energyPool > energyMax)
+            {
+                energyIsFull = true;
+                leftOverEnergy = energyPool - energyMax;
+                energyPool = energyMax;
+            }
+        }
         return leftOverEnergy;
     }
 

@@ -149,7 +149,7 @@ public class BladeRoot : MonoBehaviour
 
                 increments++;
 
-                TransferEnergy();
+                //TransferEnergy();
             }
         }
     }
