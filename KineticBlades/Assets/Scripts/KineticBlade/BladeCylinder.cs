@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BladeCylinder : MonoBehaviour
 {
+    public BladeRoot myBladeRoot;
+    public int incrementID = -1;
+
     protected BoxCollider myBoxCollider;
     protected Rigidbody myRigidBody;
 
@@ -15,34 +18,18 @@ public class BladeCylinder : MonoBehaviour
     public bool energyIsFull = false;
 
     public bool isDisintegrating = false;
-    protected int updatesTillDeath = 65;
+    protected int updatesTillDeath = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    public BladeCylinder nextCylinder = null;
+
+    void Awake()
     {
-        this.transform.localPosition = basePosition;
         myBoxCollider = this.GetComponent<BoxCollider>();
         myRigidBody = this.GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        if (energyIsFull)
-        {
-            // energy is full
-        }
-        if (isDisintegrating)
-        {
-            if (updatesTillDeath == 0)
-            {
-                Destroy(this.gameObject);
-                Destroy(myBoxCollider.gameObject);
-            } else
-            {
-                updatesTillDeath--;
-            }
-        }
+        this.transform.localPosition = basePosition;
     }
 
     public float AddEnergy(float newEnergy)
@@ -75,8 +62,30 @@ public class BladeCylinder : MonoBehaviour
         {
             myBoxCollider.isTrigger = false;
             myRigidBody.isKinematic = false;
+            myRigidBody.useGravity = true;
             isDisintegrating = true;
-            this.transform.DetachChildren();
+            if (nextCylinder != null) 
+            {
+                nextCylinder.Disintegrate();
+                this.transform.DetachChildren();
+                Destroy(this.gameObject);
+                Destroy(this);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "KineticBlade")
+        {
+            //myBladeRoot.Disintegrate(incrementID);
+        } else if (other.tag == "Strikable")
+        {
+            myBladeRoot.Disintegrate(incrementID);
+        }
+        else if (other.tag == "NPCBlade")
+        {
+            myBladeRoot.Disintegrate(incrementID);
         }
     }
 }

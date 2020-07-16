@@ -5,36 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/OVRCameraRigScene.unity
-    guid: 2a283de22499c2c4885133c0aec15232
-  - enabled: 0
-    path: Assets/Scenes/OVRPlayerControllerScene.unity
-    guid: df4d71ee25be36440a28ad1f75ff129e
-  - enabled: 0
-    path: Assets/Scenes/OVRLocalAvatar.unity
-    guid: ba5dd8ca7951c384cbfbb38b4d8deee1
   - enabled: 1
-    path: Assets/Scenes/CustomAvatar.unity
-    guid: 8e9980e4342655c4285a305ccbe963ac
-  - enabled: 0
-    path: Assets/Scenes/OculusControllersAndCustomHands.unity
-    guid: 0080bf93246c4cb4f99e3c9425336354
-  - enabled: 0
-    path: Assets/Scenes/BasicTeleportation.unity
-    guid: 0904d4c5649f0f34bab5670e7e6bf12b
-  - enabled: 0
-    path: Assets/Scenes/BasicGrabbing.unity
-    guid: eb8119cf67d7f414bb1edb32b4b4cb53
-  - enabled: 0
-    path: Assets/Scenes/DistanceGrabbingScene.unity
-    guid: 2ed590ef3f1ddfe429bf1adf1f8208e6
-  - enabled: 0
-    path: Assets/Scenes/UI_BasicInteractions.unity
-    guid: a22c7fb19e0a22a4a96d465a95937490
-  - enabled: 0
-    path: Assets/Scenes/InGameDebugConsole.unity
-    guid: b9798f4cb9fe45f47b0755c99ef08ee9
+    path: Assets/Scenes/NPC_Arena.unity
+    guid: 20b139bf9bd7a8c42910e9b1e10ce0dc
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5eee7201eb3261a499b197a49a3725bf,
       type: 2}

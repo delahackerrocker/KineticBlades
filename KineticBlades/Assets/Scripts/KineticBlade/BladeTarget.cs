@@ -17,6 +17,9 @@ public class BladeTarget : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        BladeRoot.instance.Disintegrate();
+        if (other.tag == "KineticBlade")
+        {
+            //other.gameObject.GetComponent<BladeCylinder>().Disintegrate();
+        }
     }
 }

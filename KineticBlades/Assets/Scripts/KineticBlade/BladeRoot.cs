@@ -10,7 +10,7 @@ public class BladeRoot : MonoBehaviour
     protected int increments;
     protected int incrementMax = 100;
     protected GameObject[] bladeCylinders;
-    protected BladeCylinder currentBladeCylinder;
+    protected BladeCylinder currentBladeCylinder = null;
     protected Transform parentTarget;
 
     protected Vector3 lastPosition;
@@ -27,7 +27,7 @@ public class BladeRoot : MonoBehaviour
 
     public bool testDisintegration = false;
 
-    public bool isDisintegrating = false;
+    public bool justBroke = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,7 @@ public class BladeRoot : MonoBehaviour
 
     protected void InitializeSword()
     {
-        isDisintegrating = false;
+        justBroke = false;
 
         increments = 0;
 
@@ -62,46 +62,31 @@ public class BladeRoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isDisintegrating)
+        lastPosition = currentPosition;
+        currentPosition = this.transform.position;
+
+        float movementChange = Vector3.Distance(currentPosition, lastPosition);
+        float absMovementChange = Mathf.Abs(movementChange);
+        if (absMovementChange > movementChangeThreshold) movementMagnitude += absMovementChange;
+
+        float rotationChange = Quaternion.Angle(lastRotation, currentRotation);
+        float absRotationChange = Mathf.Abs(rotationChange);
+        if (absRotationChange > rotationChangeThreshold) rotationMagnitude += (absRotationChange * rotationMagnify);
+
+        TransferEnergy();
+
+        // Reset the Movement Magnitude if they press OVRInput.Button.Two
+        if (Input.GetKeyDown(KeyCode.Space) && !justBroke)
         {
-            // Do Nothing
-        } else
-        {
-            lastPosition = currentPosition;
-            currentPosition = this.transform.position;
-
-            float movementChange = Vector3.Distance(currentPosition, lastPosition);
-            float absMovementChange = Mathf.Abs(movementChange);
-            if (absMovementChange > movementChangeThreshold) movementMagnitude += absMovementChange;
-
-            float rotationChange = Quaternion.Angle(lastRotation, currentRotation);
-            float absRotationChange = Mathf.Abs(rotationChange);
-            if (absRotationChange > rotationChangeThreshold) rotationMagnitude += (absRotationChange * rotationMagnify);
-
-            TransferEnergy();
-
-            // Reset the Movement Magnitude if they press OVRInput.Button.Two
-            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
-            {
-                Disintegrate();
-            }
-
-            if (testDisintegration)
-            {
-                testDisintegration = false;
-                Disintegrate();
-            }
+            justBroke = true;
+            Disintegrate(5);
         }
     }
 
     public void TransferEnergy()
     {
-        if (isDisintegrating)
-        {
-            // Do Nothing
-        }
-        else
-        {
+        if (currentBladeCylinder != null)
+        { 
             if (currentBladeCylinder.energyIsFull)
             {
                 // the energy of this BladeCylinder is full make a new one
@@ -120,37 +105,35 @@ public class BladeRoot : MonoBehaviour
 
     public void CreateBladeCylinder()
     {
-        if (isDisintegrating)
+        if (increments >= incrementMax)
         {
-            // Do Nothing
+            // We've reached the maximum number of BladeCylinders
         }
         else
         {
-            if (increments >= incrementMax)
-            {
-                // We've reached the maximum number of BladeCylinders
-            }
-            else
-            {
-                // create a new BladeCylinder and parent it to the parentTarget
-                bladeCylinders[increments] = Instantiate(bladeCylinderTemplate);
-                bladeCylinders[increments].transform.SetParent(parentTarget);
+            // create a new BladeCylinder and parent it to the parentTarget
+            bladeCylinders[increments] = Instantiate(bladeCylinderTemplate);
+            bladeCylinders[increments].transform.SetParent(parentTarget);
 
-                // get a reference to the current BladeCylinder's class
-                currentBladeCylinder = bladeCylinders[increments].GetComponent<BladeCylinder>();
+            // get a reference to the current BladeCylinder's class
+            if (increments > 0 && !justBroke) currentBladeCylinder.nextCylinder = bladeCylinders[increments].GetComponent<BladeCylinder>();
+            currentBladeCylinder = bladeCylinders[increments].GetComponent<BladeCylinder>();
+            currentBladeCylinder.myBladeRoot = this;
+            currentBladeCylinder.incrementID = increments;
 
-                // make our newest BladeCylinder the parentTarget
-                parentTarget = bladeCylinders[increments].transform;
+            justBroke = false;
 
-                // set the newest Blade Cylinder's position
-                bladeCylinders[increments].transform.localScale = Vector3.one;
-                bladeCylinders[increments].transform.localRotation = Quaternion.Euler(0, 0, 0);
-                bladeCylinders[increments].transform.localPosition = new Vector3(0f, 0f, 0f);
+            // make our newest BladeCylinder the parentTarget
+            parentTarget = bladeCylinders[increments].transform;
 
-                increments++;
+            // set the newest Blade Cylinder's position
+            bladeCylinders[increments].transform.localScale = Vector3.one;
+            bladeCylinders[increments].transform.localRotation = Quaternion.Euler(0, 0, 0);
+            bladeCylinders[increments].transform.localPosition = new Vector3(0f, 0f, 0f);
 
-                //TransferEnergy();
-            }
+            increments++;
+
+            //TransferEnergy();
         }
     }
 
@@ -159,15 +142,35 @@ public class BladeRoot : MonoBehaviour
         movementMagnitude = 0;
     }
 
-    public void Disintegrate()
+    public void Disintegrate(int targetIncrementID)
     {
-        for (int index = 0; index < increments; index++)
+        Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
+        if (targetIncrementID == -1)
         {
-            bladeCylinders[index].GetComponent<BladeCylinder>().Disintegrate();
+            Debug.LogWarning("incrementID == -1");
         }
-        this.transform.DetachChildren();
+        else if (targetIncrementID == 0)
+        {
+            bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
+            currentBladeCylinder = null;
 
-        isDisintegrating = true;
-        Invoke("InitializeSword", .2f);
+            increments = targetIncrementID;
+
+            // make this gameObject the parentTarget
+            parentTarget = this.transform;
+        }
+        else if (targetIncrementID >= 1)
+        {
+            bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
+            currentBladeCylinder = bladeCylinders[targetIncrementID - 1].GetComponent<BladeCylinder>();
+
+            increments = targetIncrementID;
+
+            // make this gameObject the parentTarget
+            parentTarget = bladeCylinders[increments-1].transform;
+        }
+
+        movementMagnitude = 0;
+        rotationMagnitude = 0;
     }
 }

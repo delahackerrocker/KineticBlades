@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5040738111889936088}
   m_Layer: 0
   m_Name: BladeCylinder
-  m_TagString: Untagged
+  m_TagString: KineticBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,4 +126,4 @@ MonoBehaviour:
   energyPool: 0
   energyIsFull: 0
   isDisintegrating: 0
-  updatesTillDeath: 12
+  nextCylinder: {fileID: 0}
