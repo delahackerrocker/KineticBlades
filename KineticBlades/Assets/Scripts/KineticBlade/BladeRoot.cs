@@ -79,7 +79,12 @@ public class BladeRoot : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !justBroke)
         {
             justBroke = true;
-            Disintegrate(5);
+            Disintegrate(0);
+        }
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) && !justBroke)
+        {
+            justBroke = true;
+            Disintegrate(0);
         }
     }
 
@@ -166,7 +171,7 @@ public class BladeRoot : MonoBehaviour
 
             increments = targetIncrementID;
 
-            // make this gameObject the parentTarget
+            // make the previous bladeCylinder in line the parent target
             parentTarget = bladeCylinders[increments-1].transform;
         }
 

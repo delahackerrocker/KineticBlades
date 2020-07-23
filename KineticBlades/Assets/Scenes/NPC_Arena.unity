@@ -2431,6 +2431,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: KineticBlade
       objectReference: {fileID: 0}
+    - target: {fileID: 4846485525720669274, guid: d08758fbef4418c488aa83a3cb1e424a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5748038234572880001, guid: d08758fbef4418c488aa83a3cb1e424a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6548713834763570380, guid: d08758fbef4418c488aa83a3cb1e424a,
         type: 3}
       propertyPath: m_TagString

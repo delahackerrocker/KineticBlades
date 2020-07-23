@@ -71,7 +71,7 @@ public class AvatarInputConverter : MonoBehaviour
         // The player can use their button on their right controller to change swords
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
-            ShowNextSword();
+            ///ShowNextSword();
         }
     }
 
