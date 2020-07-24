@@ -7,6 +7,8 @@ TagManager:
   - KineticBlade
   - Strikable
   - NPCBlade
+  - Sword
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Teleport
   - DistanceGrab
   - HiddenHead
-  - 
+  - Slicable
   - 
   - 
   - 

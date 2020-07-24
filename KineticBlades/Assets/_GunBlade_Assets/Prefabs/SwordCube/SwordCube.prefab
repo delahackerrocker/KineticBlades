@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2658914618188550336}
   - component: {fileID: 7185695676711228939}
   - component: {fileID: 1830747692}
-  m_Layer: 8
+  m_Layer: 11
   m_Name: SwordCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 609471acfcb590a439f0826930f0c68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: -300
+  force: -150
 --- !u!54 &1830747692
 Rigidbody:
   m_ObjectHideFlags: 0

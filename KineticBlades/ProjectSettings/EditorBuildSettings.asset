@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/NPC_Arena.unity
-    guid: 20b139bf9bd7a8c42910e9b1e10ce0dc
+    path: Assets/_GunBlade_Assets/Scenes/LobbyScene.unity
+    guid: c31e1de002b648041bbe01d575ea9f9b
+  - enabled: 1
+    path: Assets/_GunBlade_Assets/Scenes/GameScene.unity
+    guid: 8b0418fd49eb1d24fa8f70f9bf0642dd
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5eee7201eb3261a499b197a49a3725bf,
       type: 2}
