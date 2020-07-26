@@ -45,11 +45,11 @@ public class Slicer : MonoBehaviour
     {
         obj.AddComponent<MeshCollider>().convex = true;
         obj.AddComponent<Rigidbody>();
-        obj.GetComponent<Rigidbody>().velocity = -_velocity;
+        obj.GetComponent<Rigidbody>().velocity = _velocity / 16;
 
-        float randomNumberX = Random.Range(0f, 4f) - 2f;
-        float randomNumberY = Random.Range(0f, 4f) - 2f;
-        float randomNumberZ = Random.Range(0f, 4f) - 2f;
+        float randomNumberX = Random.Range(0f, 2f) - 1f;
+        float randomNumberY = Random.Range(0f, 2f) - 1f;
+        float randomNumberZ = Random.Range(0f, 2f) - 1f;
 
         obj.GetComponent<Rigidbody>().AddForce(3*new Vector3(randomNumberX,randomNumberY,randomNumberZ),ForceMode.VelocityChange);       
         obj.AddComponent<DestroyAfterSeconds>();

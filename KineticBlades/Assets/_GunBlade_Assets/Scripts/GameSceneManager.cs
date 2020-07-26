@@ -29,7 +29,7 @@ public class GameSceneManager : MonoBehaviour
         //StartCoroutine(StartCountdown(audioClipLength));
 
         //Resetting progress bar
-        progressBarImage.fillAmount = Mathf.Clamp(0, 0, 1);
+        //progressBarImage.fillAmount = Mathf.Clamp(0, 0, 1);
 
 
     }

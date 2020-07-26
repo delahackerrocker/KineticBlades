@@ -8,6 +8,6 @@ public class CubePhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().AddForce(new Vector3(0,0,force),ForceMode.Acceleration);
+        GetComponent<Rigidbody>().AddForce(transform.forward*-force, ForceMode.Acceleration);
     }
 }

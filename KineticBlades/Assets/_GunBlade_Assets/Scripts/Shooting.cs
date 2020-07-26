@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
    
-    public float fireRate = 0.1f;
+    protected float fireRate = 0.05f;
     public GameObject bulletPrefab;
 
     float elapsedTime;
@@ -48,7 +48,7 @@ public class Shooting : MonoBehaviour
         gunAnimator.SetTrigger("Fire");
 
         //Shake Left Controller
-        VibrationManager.instance.VibrateController(.1f, .2f, .2f, OVRInput.Controller.LTouch);
+        VibrationManager.instance.VibrateController(.05f, .3f, .3f, OVRInput.Controller.LTouch);
 
         //Create the bullet
         GameObject bulletGameobject = Instantiate(bulletPrefab, nozzleTransform.position, Quaternion.Euler(0, 0, 0));
