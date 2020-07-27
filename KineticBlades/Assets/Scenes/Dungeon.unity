@@ -106,21 +106,21 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.25
+    agentHeight: 1.8
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.083333336
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 6e512f7e3efc04d4e9cc582c5a1d3a2d, type: 2}
 --- !u!1001 &3665405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5707,6 +5707,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 615649516}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &621040941
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_Name
+      value: 2Handed Warrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.272343
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.172
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.768983
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11413712, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2111820055}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9525858720ba8304db1453bdfd346a52, type: 3}
 --- !u!1001 &624946900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12944,7 +13005,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378660278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 13.17, z: 0}
   m_LocalScale: {x: 60, y: 30, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -26211,6 +26272,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4074708006291034, guid: e1f678617630d984dae4090529c71360,
     type: 3}
   m_PrefabInstance: {fileID: 2111789453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2111820053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 9525858720ba8304db1453bdfd346a52,
+    type: 3}
+  m_PrefabInstance: {fileID: 621040941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &2111820054
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111820053}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!95 &2111820055 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9590292, guid: 9525858720ba8304db1453bdfd346a52,
+    type: 3}
+  m_PrefabInstance: {fileID: 621040941}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2122374003
 PrefabInstance:
