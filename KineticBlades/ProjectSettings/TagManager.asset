@@ -9,6 +9,10 @@ TagManager:
   - NPCBlade
   - Sword
   - Bullet
+  - HardFloor
+  - Doorway
+  - BackButton
+  - NPC
   layers:
   - Default
   - TransparentFX

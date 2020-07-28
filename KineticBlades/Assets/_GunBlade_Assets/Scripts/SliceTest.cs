@@ -28,7 +28,12 @@ public class SliceTest : MonoBehaviour
                 MakeItPhysical(lowerHullGameobject);
                 MakeItPhysical(upperHullGameobject);
 
-                //Destroys the main object that was sliced
+                if (objectToSlice.gameObject.tag == "NPC")
+                {
+                    //Destroys the slicable objects parent cleaning up animations etc
+                    Destroy(objectToSlice.gameObject.transform.parent.gameObject);
+                }
+                //Destroys the main object geometry was sliced
                 Destroy(objectToSlice.gameObject);
             }
         }
