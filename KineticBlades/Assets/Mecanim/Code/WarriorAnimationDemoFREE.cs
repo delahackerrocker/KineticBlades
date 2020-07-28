@@ -1,29 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+using UnityEngine.AI;
+
 public class WarriorAnimationDemoFREE : MonoBehaviour 
 {
-	public Animator animator;
-	float rotationSpeed = 30;
-	Vector3 inputVec;
-	Vector3 targetDirection;
-	
-	//Warrior types
-	public enum Warrior{Karate, Ninja, Brute, Sorceress, Knight, Mage, Archer, TwoHanded, Swordsman, Spearman, Hammer, Crossbow};
-	public Warrior warrior;
+	public float patrolTime = 15; // time in seconds to wait before seeking a new patrol destination
+	public float aggroRange = 10; // distance in scene units below which the NPC will increase speed and seek the player
+	public Transform[] waypoints; // collection of waypoints which define a patrol area
+
+	int index; // the current waypoint index in the waypoints array
+	float speed, agentSpeed; // current agent speed and NavMeshAgent component speed
+	Transform player; // reference to the player object transform
+
+	protected Animator animator;
+	protected NavMeshAgent navMeshAgent;
+
+	public bool killMe = false;
 	
 	void Update()
 	{
-		//Get input from controls
-		float z = Input.GetAxisRaw("Horizontal");
-		float x = -(Input.GetAxisRaw("Vertical"));
-		inputVec = new Vector3(x, 0, z);
+		Vector3 movementVelocity = navMeshAgent.velocity;
 
 		//Apply inputs to animator
-		animator.SetFloat("Input X", z);
-		animator.SetFloat("Input Z", -(x));
+		//animator.SetFloat("Input X", movementVelocity.z);
+		//animator.SetFloat("Input Z", -(movementVelocity.x));
 
-		if (x != 0 || z != 0 )  //if there is some input
+		if (movementVelocity.x != 0 || movementVelocity.z != 0 )  //if there is some input
 		{
 			//set that character is moving
 			animator.SetBool("Moving", true);
@@ -33,7 +36,7 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 			//character is not moving
 			animator.SetBool("Moving", false);
 		}
-
+		/*
 		if (Input.GetButtonDown("Fire1"))
 		{
 			animator.SetTrigger("Attack1Trigger");
@@ -47,6 +50,12 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 
 		//update character position and facing
 		UpdateMovement();
+		*/
+
+		if (killMe)
+		{
+			Die();
+		}
 	}
 
 	public IEnumerator COStunPause(float pauseTime)
@@ -54,50 +63,6 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 		yield return new WaitForSeconds(pauseTime);
 	}
 
-	//converts control input vectors into camera facing vectors
-	void GetCameraRelativeMovement()
-	{  
-		Transform cameraTransform = Camera.main.transform;
-
-		// Forward vector relative to the camera along the x-z plane   
-		Vector3 forward = cameraTransform.TransformDirection(Vector3.forward);
-		forward.y = 0;
-		forward = forward.normalized;
-
-		// Right vector relative to the camera
-		// Always orthogonal to the forward vector
-		Vector3 right= new Vector3(forward.z, 0, -forward.x);
-
-		//directional inputs
-		float v = Input.GetAxisRaw("Vertical");
-		float h = Input.GetAxisRaw("Horizontal");
-
-		// Target direction relative to the camera
-		targetDirection = h * right + v * forward;
-	}
-
-	//face character along input direction
-	void RotateTowardMovementDirection()  
-	{
-		if(inputVec != Vector3.zero)
-		{
-			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), Time.deltaTime * rotationSpeed);
-		}
-	}
-
-	void UpdateMovement()
-	{
-		//get movement input from controls
-		Vector3 motion = inputVec;
-
-		//reduce input for diagonal movement
-		motion *= (Mathf.Abs(inputVec.x) == 1 && Mathf.Abs(inputVec.z) == 1) ? 0.7f:1;
-		
-		RotateTowardMovementDirection();  
-		GetCameraRelativeMovement();  
-	}
-
-	//Placeholder functions for Animation events
 	void Hit()
 	{
 	}
@@ -110,21 +75,104 @@ public class WarriorAnimationDemoFREE : MonoBehaviour
 	{
 	}
 
-	void OnGUI () 
+	void OnTriggerEnter(Collider other)
 	{
-		if (GUI.Button (new Rect (25, 85, 100, 30), "Attack1")) 
+		if (other.tag == "Bullet")
 		{
-			animator.SetTrigger("Attack1Trigger");
-
-			//if character is Brute or Sorceress
-			if (warrior == Warrior.Brute || warrior == Warrior.Sorceress)
-			{
-				StartCoroutine (COStunPause(1.2f));
-			}
-			else
-			{
-				StartCoroutine (COStunPause(.6f));
-			}
+			Die();
+		} else if (other.tag == "Sword")
+		{
+			Die();
 		}
+		else if (other.tag == "KineticBlade")
+		{
+			Die();
+		}
+	}
+
+	void Die()
+	{
+		GetComponent<Animator>().enabled = false;
+		GetComponent<NavMeshAgent>().enabled = false;
+
+		CancelInvoke();
+
+		SetRigidBodyState(false);
+		SetRigidColliderState(true);
+
+		Destroy(gameObject, 10f);
+	}
+
+	void Awake()
+	{
+		animator = GetComponent<Animator>();
+		navMeshAgent = GetComponent<NavMeshAgent>();
+		if (navMeshAgent != null) { agentSpeed = navMeshAgent.speed; }
+		player = GameObject.FindGameObjectWithTag("Player").transform;
+		index = Random.Range(0, waypoints.Length);
+
+		InvokeRepeating("Tick", 0, 0.5f);
+
+		if (waypoints.Length > 0)
+		{
+			InvokeRepeating("Patrol", Random.Range(0, patrolTime), patrolTime);
+		}
+	}
+
+	void Patrol()
+	{
+		index = index == waypoints.Length - 1 ? 0 : index + 1;
+	}
+
+	void Tick()
+	{
+		navMeshAgent.destination = waypoints[index].position;
+		navMeshAgent.speed = agentSpeed;
+
+		if (player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
+		{
+			navMeshAgent.destination = player.transform.position;
+			navMeshAgent.speed = agentSpeed;
+		}
+	}
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(transform.position, aggroRange);
+	}
+
+	private void Start()
+	{
+		SetRigidBodyState(true);
+		SetRigidColliderState(false);
+
+		navMeshAgent = GetComponent<NavMeshAgent>();
+		//navMeshAgent.destination = player.position;
+
+		animator = GetComponent<Animator>();
+	}
+
+	void SetRigidBodyState(bool state)
+	{
+		Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+
+		foreach (Rigidbody rigidbody in rigidbodies)
+		{
+			rigidbody.isKinematic = state;
+		}
+
+		//GetComponent<Rigidbody>().isKinematic = !state;
+	}
+	void SetRigidColliderState(bool state)
+	{
+		Collider[] colliders = GetComponentsInChildren<Collider>();
+
+		foreach (Collider collider in colliders)
+		{
+			collider.enabled = state;
+		}
+
+		GetComponent<Collider>().enabled = !state;
 	}
 }
