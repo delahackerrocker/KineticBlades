@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173d287b5ec75a9428de2ed0f9dcd5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBladeRoot: {fileID: 0}
+  incrementID: -1
   energyPool: 0
   energyIsFull: 0
   isDisintegrating: 0

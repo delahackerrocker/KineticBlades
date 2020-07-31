@@ -13,12 +13,11 @@ public class BladeCylinder : MonoBehaviour
     protected Vector3 basePosition = new Vector3(0, 2.3f, 0f);
 
     public float energyPool = 0;
-    protected float energyMax = .02f;
+    protected float energyMax = .025f;
 
     public bool energyIsFull = false;
 
     public bool isDisintegrating = false;
-    protected int updatesTillDeath = 3;
 
     public BladeCylinder nextCylinder = null;
 
@@ -64,28 +63,44 @@ public class BladeCylinder : MonoBehaviour
             myRigidBody.isKinematic = false;
             myRigidBody.useGravity = true;
             isDisintegrating = true;
-            if (nextCylinder != null) 
+            this.transform.DetachChildren();
+            if (nextCylinder != null)
             {
                 nextCylinder.Disintegrate();
-                this.transform.DetachChildren();
-                Destroy(this.gameObject);
-                Destroy(this);
             }
+
+            Invoke("DestroyMe", 3f);
         }
+    }
+
+    protected void DestroyMe()
+    {
+        Destroy(this.gameObject);
+        Destroy(this);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "KineticBlade")
+        if (isDisintegrating)
         {
-            //myBladeRoot.Disintegrate(incrementID);
-        } else if (other.tag == "Strikable")
-        {
-            myBladeRoot.Disintegrate(incrementID);
+            // already disintegrating
         }
-        else if (other.tag == "NPCBlade")
+        else
         {
-            myBladeRoot.Disintegrate(incrementID);
+            if (other.tag == "KineticBlade")
+            {
+                //myBladeRoot.Disintegrate(incrementID);
+            }
+            else if (other.tag == "Strikable")
+            {
+                //myBladeRoot.Disintegrate(incrementID);
+                myBladeRoot.Disintegrate(0);
+            }
+            else if (other.tag == "NPCBlade")
+            {
+                //myBladeRoot.Disintegrate(incrementID);
+                myBladeRoot.Disintegrate(0);
+            }
         }
     }
 }

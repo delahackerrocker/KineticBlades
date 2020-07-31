@@ -82,7 +82,7 @@ public class ButtonPushClick : MonoBehaviour
 
         }
         //Load Scene
-        SceneLoader.instance.LoadScene("GunBlade");
+        SceneLoader.instance.LoadScene("Cavern");
     }
 
     private void OnTriggerEnter(Collider other)

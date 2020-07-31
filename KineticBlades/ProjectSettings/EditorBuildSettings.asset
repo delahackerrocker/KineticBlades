@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 9e4dbcf333a3c754aa4005792ee4e047
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GunBlade.unity
     guid: 4502ecc87f48c3c418e719b7ef923019
-  - enabled: 0
-    path: Assets/_NPC_LAB/Scenes/Main.unity
-    guid: 8f499b97c0d0f19409545499da9bc55e
+  - enabled: 1
+    path: Assets/Scenes/Cavern.unity
+    guid: ec712d3256f26a9419813f0b0d3a6b61
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5eee7201eb3261a499b197a49a3725bf,
       type: 2}

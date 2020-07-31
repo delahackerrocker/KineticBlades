@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6761412753134729307}
   m_Layer: 0
   m_Name: BladeRoot
-  m_TagString: Untagged
+  m_TagString: KineticBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,3 +47,5 @@ MonoBehaviour:
     type: 3}
   movementMagnitude: 0
   rotationMagnitude: 0
+  testDisintegration: 0
+  justBroke: 0

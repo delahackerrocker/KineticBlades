@@ -21,8 +21,8 @@ public class BladeRoot : MonoBehaviour
     public float movementMagnitude = 0;
     public float rotationMagnitude = 0;
 
-    protected float movementChangeThreshold = .007f;
-    protected float rotationChangeThreshold = .007f;
+    protected float movementChangeThreshold = .01f;
+    protected float rotationChangeThreshold = .01f;
     protected float rotationMagnify = 3.5f;
 
     public bool testDisintegration = false;
@@ -110,7 +110,7 @@ public class BladeRoot : MonoBehaviour
 
     public void CreateBladeCylinder()
     {
-        if (increments >= incrementMax)
+        if (increments == incrementMax)
         {
             // We've reached the maximum number of BladeCylinders
         }
@@ -149,33 +149,41 @@ public class BladeRoot : MonoBehaviour
 
     public void Disintegrate(int targetIncrementID)
     {
-        Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
-        if (targetIncrementID == -1)
+        if (targetIncrementID > (increments - 1))
         {
-            Debug.LogWarning("incrementID == -1");
+            // an increment further down the chain fired after a lower chain link already began disintegrating
         }
-        else if (targetIncrementID == 0)
+        else
         {
-            bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
-            currentBladeCylinder = null;
+            Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
+            if (targetIncrementID == -1)
+            {
+                // not a valid targetIncrementID
+                Debug.LogWarning("incrementID == -1");
+            }
+            else
+            {
 
-            increments = targetIncrementID;
+                if (targetIncrementID == 0)
+                {
+                    if (bladeCylinders[1] != null) bladeCylinders[1].GetComponent<BladeCylinder>().Disintegrate();
+                    currentBladeCylinder = bladeCylinders[0].GetComponent<BladeCylinder>();
 
-            // make this gameObject the parentTarget
-            parentTarget = this.transform;
+                    currentBladeCylinder.transform.DetachChildren();
+
+                    increments = 1;
+                }
+                else if (targetIncrementID >= 1)
+                {
+                    bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
+                    currentBladeCylinder = bladeCylinders[targetIncrementID - 1].GetComponent<BladeCylinder>();
+                }
+            }
+
+            parentTarget = currentBladeCylinder.transform;
+
+            movementMagnitude = 0;
+            rotationMagnitude = 0;
         }
-        else if (targetIncrementID >= 1)
-        {
-            bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
-            currentBladeCylinder = bladeCylinders[targetIncrementID - 1].GetComponent<BladeCylinder>();
-
-            increments = targetIncrementID;
-
-            // make the previous bladeCylinder in line the parent target
-            parentTarget = bladeCylinders[increments-1].transform;
-        }
-
-        movementMagnitude = 0;
-        rotationMagnitude = 0;
     }
 }

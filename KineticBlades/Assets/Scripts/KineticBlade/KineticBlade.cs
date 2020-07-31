@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KineticBlade : MonoBehaviour
+public class KineticBlade : HandItem
 {
     // Start is called before the first frame update
     void Start()
