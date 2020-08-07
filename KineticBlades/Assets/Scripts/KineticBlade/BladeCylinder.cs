@@ -90,6 +90,7 @@ public class BladeCylinder : MonoBehaviour
             if (other.tag == "KineticBlade")
             {
                 //myBladeRoot.Disintegrate(incrementID);
+                myBladeRoot.Disintegrate(0);
             }
             else if (other.tag == "Strikable")
             {

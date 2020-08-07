@@ -20,7 +20,7 @@ public class AI_NPC : MonoBehaviour
 
     protected bool shouldAttackNow = false;
     protected int attackDesire = 0;
-    protected int desireThreshold = 60;
+    protected int desireThreshold = 40;
     protected float decisionTimer = 1f;
     protected float strikingDistance = 2f;
 
@@ -65,7 +65,7 @@ public class AI_NPC : MonoBehaviour
 
             float distanceToEnemy = Vector3.Distance(lookTarget.position, transform.position);
 
-            if (distanceToEnemy < 3)
+            if (distanceToEnemy < 4)
             {
                 attackDesire++;
 
