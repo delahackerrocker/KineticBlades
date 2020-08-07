@@ -8,7 +8,7 @@ public class BladeRoot : MonoBehaviour
     public GameObject bladeCylinderTemplate;
 
     protected int increments;
-    protected int incrementMax = 100;
+    public int incrementMax = 50;
     protected GameObject[] bladeCylinders;
     protected BladeCylinder currentBladeCylinder = null;
     protected Transform parentTarget;
@@ -22,6 +22,7 @@ public class BladeRoot : MonoBehaviour
     public float rotationMagnitude = 0;
 
     protected float movementChangeThreshold = .01f;
+    protected float movementMagnify = .25f;
     protected float rotationChangeThreshold = .01f;
     protected float rotationMagnify = 3.5f;
 
@@ -67,7 +68,7 @@ public class BladeRoot : MonoBehaviour
 
         float movementChange = Vector3.Distance(currentPosition, lastPosition);
         float absMovementChange = Mathf.Abs(movementChange);
-        if (absMovementChange > movementChangeThreshold) movementMagnitude += absMovementChange;
+        if (absMovementChange > movementChangeThreshold) movementMagnitude += (absMovementChange/movementMagnify);
 
         float rotationChange = Quaternion.Angle(lastRotation, currentRotation);
         float absRotationChange = Mathf.Abs(rotationChange);

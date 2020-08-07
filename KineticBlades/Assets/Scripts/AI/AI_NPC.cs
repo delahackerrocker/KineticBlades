@@ -10,7 +10,7 @@ public class AI_NPC : MonoBehaviour
     public AI_TargetingStack aiTargetingStack;
 
     protected AI_Target aiTarget;
-    protected Transform lookTarget;
+    public Transform lookTarget;
 
     protected NavMeshAgent navMeshAgent;
     public Animator animator;
