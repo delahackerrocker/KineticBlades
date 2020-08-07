@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
 
 public class AI_NPC : MonoBehaviour
 {
@@ -10,16 +11,26 @@ public class AI_NPC : MonoBehaviour
     protected Transform lookTarget;
 
     protected NavMeshAgent navMeshAgent;
+    public Animator animator;
 
     public bool lockOnToggle = true;
     public bool targetAssigned = false;
+
+    public Vector3 movementVector;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
 
+        movementVector = Vector3.zero;
+
         Invoke("AssignNewTarget", .1f);
         InvokeRepeating("AssignNewTarget", 2f, 2f);
+    }
+
+    private void OnApplicationQuit()
+    {
+        CancelInvoke();
     }
 
 
@@ -37,6 +48,10 @@ public class AI_NPC : MonoBehaviour
                 transform.rotation = rotation;
             }
         }
+
+        Debug.Log("AI_NPC :: navMeshAgent.velocity:"+ navMeshAgent.velocity);
+        animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
+        animator.SetFloat("Strafe", movementVector.x);
     }
 
     protected void AssignNewTarget()

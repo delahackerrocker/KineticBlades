@@ -1,706 +1,955 @@
 fileFormatVersion: 2
 guid: 70df6c5fd85e4c64fb8a5e637898e7a5
-timeCreated: 1448748221
-licenseType: Store
 ModelImporter:
-  serializedVersion: 18
-  fileIDToRecycleName:
-    100000: AnimModel
-    100002: Armature
-    100004: Chest
-    100006: Head
-    100008: Hip
-    100010: LClavicle
-    100012: LFinger0
-    100014: LFinger01
-    100016: LFinger02
-    100018: LFinger1
-    100020: LFinger11
-    100022: LFinger12
-    100024: LFinger2
-    100026: LFinger21
-    100028: LFinger22
-    100030: LFinger3
-    100032: LFinger31
-    100034: LFinger32
-    100036: LFinger4
-    100038: LFinger41
-    100040: LFinger42
-    100042: LFoot
-    100044: LForearm
-    100046: LHand
-    100048: LowerSpine
-    100050: LShin
-    100052: LShoulder
-    100054: LThigh
-    100056: LToe
-    100058: MiddleSpine
-    100060: Neck
-    100062: //RootNode
-    100064: RClavicle
-    100066: RFinger0
-    100068: RFinger01
-    100070: RFinger02
-    100072: RFinger1
-    100074: RFinger11
-    100076: RFinger12
-    100078: RFinger2
-    100080: RFinger21
-    100082: RFinger22
-    100084: RFinger3
-    100086: RFinger31
-    100088: RFinger32
-    100090: RFinger4
-    100092: RFinger41
-    100094: RFinger42
-    100096: RFoot
-    100098: RForearm
-    100100: RHand
-    100102: RShin
-    100104: RShoulder
-    100106: RThigh
-    100108: RToe
-    100110: Shield
-    100112: Sword
-    400000: AnimModel
-    400002: Armature
-    400004: Chest
-    400006: Head
-    400008: Hip
-    400010: LClavicle
-    400012: LFinger0
-    400014: LFinger01
-    400016: LFinger02
-    400018: LFinger1
-    400020: LFinger11
-    400022: LFinger12
-    400024: LFinger2
-    400026: LFinger21
-    400028: LFinger22
-    400030: LFinger3
-    400032: LFinger31
-    400034: LFinger32
-    400036: LFinger4
-    400038: LFinger41
-    400040: LFinger42
-    400042: LFoot
-    400044: LForearm
-    400046: LHand
-    400048: LowerSpine
-    400050: LShin
-    400052: LShoulder
-    400054: LThigh
-    400056: LToe
-    400058: MiddleSpine
-    400060: Neck
-    400062: //RootNode
-    400064: RClavicle
-    400066: RFinger0
-    400068: RFinger01
-    400070: RFinger02
-    400072: RFinger1
-    400074: RFinger11
-    400076: RFinger12
-    400078: RFinger2
-    400080: RFinger21
-    400082: RFinger22
-    400084: RFinger3
-    400086: RFinger31
-    400088: RFinger32
-    400090: RFinger4
-    400092: RFinger41
-    400094: RFinger42
-    400096: RFoot
-    400098: RForearm
-    400100: RHand
-    400102: RShin
-    400104: RShoulder
-    400106: RThigh
-    400108: RToe
-    400110: Shield
-    400112: Sword
-    4300000: AnimModel
-    4300002: Shield
-    4300004: Sword
-    7400000: Airborne
-    7400002: AirborneLand
-    7400004: Attack01
-    7400006: Attack02
-    7400008: Attack03
-    7400010: Attack04
-    7400012: AttackRM01
-    7400014: AttackRM02
-    7400016: AttackRM03
-    7400018: AttackRM04
-    7400020: Backstab
-    7400022: BackstabGetHit
-    7400024: BackstabGetHitGetUp
-    7400026: BlockHit
-    7400028: BlockIdle
-    7400030: BlockShieldHit
-    7400032: BlockShieldIdle
-    7400034: Death01
-    7400036: Death01GetUp
-    7400038: Death02
-    7400040: Death02GetUp
-    7400042: Deflect01
-    7400044: Deflect02
-    7400046: DeflectShield
-    7400048: DeflectStagger
-    7400050: DeflectStaggerShield
-    7400052: Dodge01
-    7400054: Dodge02
-    7400056: Dodge03
-    7400058: Dodge04
-    7400060: Dodge05
-    7400062: Dodge06
-    7400064: Dodge07
-    7400066: Dodge08
-    7400068: Dodge09
-    7400070: Dodge10
-    7400072: DrinkL
-    7400074: DrinkR
-    7400076: EatL
-    7400078: EatR
-    7400080: GetHitBack
-    7400082: GetHitFront
-    7400084: GetHitLeft01
-    7400086: GetHitLeft02
-    7400088: GetHitRight01
-    7400090: GetHitRight02
-    7400092: IdleLoop01
-    7400094: IdleLoop02
-    7400096: IdleRandom01
-    7400098: IdleRandom02
-    7400100: IdleRandom03
-    7400102: IdleRandom04
-    7400104: Jump
-    7400106: Kick
-    7400108: KickRM
-    7400110: Knockdown01
-    7400112: Knockdown01GetUp
-    7400114: Knockdown02
-    7400116: Knockdown02GetUp
-    7400118: Parry
-    7400120: ParryShield
-    7400122: Run
-    7400124: RunShield
-    7400126: ShieldBash01
-    7400128: ShieldBash02
-    7400130: Skill01
-    7400132: Skill02
-    7400134: Skill03
-    7400136: Skill03NoRoot
-    7400138: Skill04
-    7400140: StaggerBack
-    7400142: StaggerForward
-    7400144: StaggerLeft
-    7400146: StaggerRight
-    7400148: StrafeRunL
-    7400150: StrafeRunLShield
-    7400152: StrafeRunR
-    7400154: StrafeRunRShield
-    7400156: StrafeWalkL
-    7400158: StrafeWalkLShield
-    7400160: StrafeWalkR
-    7400162: StrafeWalkRShield
-    7400164: Taunt01
-    7400166: Taunt02
-    7400168: Taunt03
-    7400170: Taunt04
-    7400172: TauntShield
-    7400174: TauntShieldLoop
-    7400176: WalkBack
-    7400178: WalkBackShield
-    7400180: WalkForward
-    7400182: WalkForwardShield
-    9500000: //RootNode
-    13700000: AnimModel
-    13700002: Shield
-    13700004: Sword
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: AnimModel
+  - first:
+      1: 100002
+    second: Armature
+  - first:
+      1: 100004
+    second: Chest
+  - first:
+      1: 100006
+    second: Head
+  - first:
+      1: 100008
+    second: Hip
+  - first:
+      1: 100010
+    second: LClavicle
+  - first:
+      1: 100012
+    second: LFinger0
+  - first:
+      1: 100014
+    second: LFinger01
+  - first:
+      1: 100016
+    second: LFinger02
+  - first:
+      1: 100018
+    second: LFinger1
+  - first:
+      1: 100020
+    second: LFinger11
+  - first:
+      1: 100022
+    second: LFinger12
+  - first:
+      1: 100024
+    second: LFinger2
+  - first:
+      1: 100026
+    second: LFinger21
+  - first:
+      1: 100028
+    second: LFinger22
+  - first:
+      1: 100030
+    second: LFinger3
+  - first:
+      1: 100032
+    second: LFinger31
+  - first:
+      1: 100034
+    second: LFinger32
+  - first:
+      1: 100036
+    second: LFinger4
+  - first:
+      1: 100038
+    second: LFinger41
+  - first:
+      1: 100040
+    second: LFinger42
+  - first:
+      1: 100042
+    second: LFoot
+  - first:
+      1: 100044
+    second: LForearm
+  - first:
+      1: 100046
+    second: LHand
+  - first:
+      1: 100048
+    second: LowerSpine
+  - first:
+      1: 100050
+    second: LShin
+  - first:
+      1: 100052
+    second: LShoulder
+  - first:
+      1: 100054
+    second: LThigh
+  - first:
+      1: 100056
+    second: LToe
+  - first:
+      1: 100058
+    second: MiddleSpine
+  - first:
+      1: 100060
+    second: Neck
+  - first:
+      1: 100062
+    second: //RootNode
+  - first:
+      1: 100064
+    second: RClavicle
+  - first:
+      1: 100066
+    second: RFinger0
+  - first:
+      1: 100068
+    second: RFinger01
+  - first:
+      1: 100070
+    second: RFinger02
+  - first:
+      1: 100072
+    second: RFinger1
+  - first:
+      1: 100074
+    second: RFinger11
+  - first:
+      1: 100076
+    second: RFinger12
+  - first:
+      1: 100078
+    second: RFinger2
+  - first:
+      1: 100080
+    second: RFinger21
+  - first:
+      1: 100082
+    second: RFinger22
+  - first:
+      1: 100084
+    second: RFinger3
+  - first:
+      1: 100086
+    second: RFinger31
+  - first:
+      1: 100088
+    second: RFinger32
+  - first:
+      1: 100090
+    second: RFinger4
+  - first:
+      1: 100092
+    second: RFinger41
+  - first:
+      1: 100094
+    second: RFinger42
+  - first:
+      1: 100096
+    second: RFoot
+  - first:
+      1: 100098
+    second: RForearm
+  - first:
+      1: 100100
+    second: RHand
+  - first:
+      1: 100102
+    second: RShin
+  - first:
+      1: 100104
+    second: RShoulder
+  - first:
+      1: 100106
+    second: RThigh
+  - first:
+      1: 100108
+    second: RToe
+  - first:
+      1: 100110
+    second: Shield
+  - first:
+      1: 100112
+    second: Sword
+  - first:
+      4: 400000
+    second: AnimModel
+  - first:
+      4: 400002
+    second: Armature
+  - first:
+      4: 400004
+    second: Chest
+  - first:
+      4: 400006
+    second: Head
+  - first:
+      4: 400008
+    second: Hip
+  - first:
+      4: 400010
+    second: LClavicle
+  - first:
+      4: 400012
+    second: LFinger0
+  - first:
+      4: 400014
+    second: LFinger01
+  - first:
+      4: 400016
+    second: LFinger02
+  - first:
+      4: 400018
+    second: LFinger1
+  - first:
+      4: 400020
+    second: LFinger11
+  - first:
+      4: 400022
+    second: LFinger12
+  - first:
+      4: 400024
+    second: LFinger2
+  - first:
+      4: 400026
+    second: LFinger21
+  - first:
+      4: 400028
+    second: LFinger22
+  - first:
+      4: 400030
+    second: LFinger3
+  - first:
+      4: 400032
+    second: LFinger31
+  - first:
+      4: 400034
+    second: LFinger32
+  - first:
+      4: 400036
+    second: LFinger4
+  - first:
+      4: 400038
+    second: LFinger41
+  - first:
+      4: 400040
+    second: LFinger42
+  - first:
+      4: 400042
+    second: LFoot
+  - first:
+      4: 400044
+    second: LForearm
+  - first:
+      4: 400046
+    second: LHand
+  - first:
+      4: 400048
+    second: LowerSpine
+  - first:
+      4: 400050
+    second: LShin
+  - first:
+      4: 400052
+    second: LShoulder
+  - first:
+      4: 400054
+    second: LThigh
+  - first:
+      4: 400056
+    second: LToe
+  - first:
+      4: 400058
+    second: MiddleSpine
+  - first:
+      4: 400060
+    second: Neck
+  - first:
+      4: 400062
+    second: //RootNode
+  - first:
+      4: 400064
+    second: RClavicle
+  - first:
+      4: 400066
+    second: RFinger0
+  - first:
+      4: 400068
+    second: RFinger01
+  - first:
+      4: 400070
+    second: RFinger02
+  - first:
+      4: 400072
+    second: RFinger1
+  - first:
+      4: 400074
+    second: RFinger11
+  - first:
+      4: 400076
+    second: RFinger12
+  - first:
+      4: 400078
+    second: RFinger2
+  - first:
+      4: 400080
+    second: RFinger21
+  - first:
+      4: 400082
+    second: RFinger22
+  - first:
+      4: 400084
+    second: RFinger3
+  - first:
+      4: 400086
+    second: RFinger31
+  - first:
+      4: 400088
+    second: RFinger32
+  - first:
+      4: 400090
+    second: RFinger4
+  - first:
+      4: 400092
+    second: RFinger41
+  - first:
+      4: 400094
+    second: RFinger42
+  - first:
+      4: 400096
+    second: RFoot
+  - first:
+      4: 400098
+    second: RForearm
+  - first:
+      4: 400100
+    second: RHand
+  - first:
+      4: 400102
+    second: RShin
+  - first:
+      4: 400104
+    second: RShoulder
+  - first:
+      4: 400106
+    second: RThigh
+  - first:
+      4: 400108
+    second: RToe
+  - first:
+      4: 400110
+    second: Shield
+  - first:
+      4: 400112
+    second: Sword
+  - first:
+      43: 4300000
+    second: AnimModel
+  - first:
+      43: 4300002
+    second: Shield
+  - first:
+      43: 4300004
+    second: Sword
+  - first:
+      74: 7400000
+    second: Airborne
+  - first:
+      74: 7400002
+    second: AirborneLand
+  - first:
+      74: 7400004
+    second: Attack01
+  - first:
+      74: 7400006
+    second: Attack02
+  - first:
+      74: 7400008
+    second: Attack03
+  - first:
+      74: 7400010
+    second: Attack04
+  - first:
+      74: 7400012
+    second: AttackRM01
+  - first:
+      74: 7400014
+    second: AttackRM02
+  - first:
+      74: 7400016
+    second: AttackRM03
+  - first:
+      74: 7400018
+    second: AttackRM04
+  - first:
+      74: 7400020
+    second: Backstab
+  - first:
+      74: 7400022
+    second: BackstabGetHit
+  - first:
+      74: 7400024
+    second: BackstabGetHitGetUp
+  - first:
+      74: 7400026
+    second: BlockHit
+  - first:
+      74: 7400028
+    second: BlockIdle
+  - first:
+      74: 7400030
+    second: BlockShieldHit
+  - first:
+      74: 7400032
+    second: BlockShieldIdle
+  - first:
+      74: 7400034
+    second: Death01
+  - first:
+      74: 7400036
+    second: Death01GetUp
+  - first:
+      74: 7400038
+    second: Death02
+  - first:
+      74: 7400040
+    second: Death02GetUp
+  - first:
+      74: 7400042
+    second: Deflect01
+  - first:
+      74: 7400044
+    second: Deflect02
+  - first:
+      74: 7400046
+    second: DeflectShield
+  - first:
+      74: 7400048
+    second: DeflectStagger
+  - first:
+      74: 7400050
+    second: DeflectStaggerShield
+  - first:
+      74: 7400052
+    second: Dodge01
+  - first:
+      74: 7400054
+    second: Dodge02
+  - first:
+      74: 7400056
+    second: Dodge03
+  - first:
+      74: 7400058
+    second: Dodge04
+  - first:
+      74: 7400060
+    second: Dodge05
+  - first:
+      74: 7400062
+    second: Dodge06
+  - first:
+      74: 7400064
+    second: Dodge07
+  - first:
+      74: 7400066
+    second: Dodge08
+  - first:
+      74: 7400068
+    second: Dodge09
+  - first:
+      74: 7400070
+    second: Dodge10
+  - first:
+      74: 7400072
+    second: DrinkL
+  - first:
+      74: 7400074
+    second: DrinkR
+  - first:
+      74: 7400076
+    second: EatL
+  - first:
+      74: 7400078
+    second: EatR
+  - first:
+      74: 7400080
+    second: GetHitBack
+  - first:
+      74: 7400082
+    second: GetHitFront
+  - first:
+      74: 7400084
+    second: GetHitLeft01
+  - first:
+      74: 7400086
+    second: GetHitLeft02
+  - first:
+      74: 7400088
+    second: GetHitRight01
+  - first:
+      74: 7400090
+    second: GetHitRight02
+  - first:
+      74: 7400092
+    second: IdleLoop01
+  - first:
+      74: 7400094
+    second: IdleLoop02
+  - first:
+      74: 7400096
+    second: IdleRandom01
+  - first:
+      74: 7400098
+    second: IdleRandom02
+  - first:
+      74: 7400100
+    second: IdleRandom03
+  - first:
+      74: 7400102
+    second: IdleRandom04
+  - first:
+      74: 7400104
+    second: Jump
+  - first:
+      74: 7400106
+    second: Kick
+  - first:
+      74: 7400108
+    second: KickRM
+  - first:
+      74: 7400110
+    second: Knockdown01
+  - first:
+      74: 7400112
+    second: Knockdown01GetUp
+  - first:
+      74: 7400114
+    second: Knockdown02
+  - first:
+      74: 7400116
+    second: Knockdown02GetUp
+  - first:
+      74: 7400118
+    second: Parry
+  - first:
+      74: 7400120
+    second: ParryShield
+  - first:
+      74: 7400122
+    second: Run
+  - first:
+      74: 7400124
+    second: RunShield
+  - first:
+      74: 7400126
+    second: ShieldBash01
+  - first:
+      74: 7400128
+    second: ShieldBash02
+  - first:
+      74: 7400130
+    second: Skill01
+  - first:
+      74: 7400132
+    second: Skill02
+  - first:
+      74: 7400134
+    second: Skill03
+  - first:
+      74: 7400136
+    second: Skill03NoRoot
+  - first:
+      74: 7400138
+    second: Skill04
+  - first:
+      74: 7400140
+    second: StaggerBack
+  - first:
+      74: 7400142
+    second: StaggerForward
+  - first:
+      74: 7400144
+    second: StaggerLeft
+  - first:
+      74: 7400146
+    second: StaggerRight
+  - first:
+      74: 7400148
+    second: StrafeRunL
+  - first:
+      74: 7400150
+    second: StrafeRunLShield
+  - first:
+      74: 7400152
+    second: StrafeRunR
+  - first:
+      74: 7400154
+    second: StrafeRunRShield
+  - first:
+      74: 7400156
+    second: StrafeWalkL
+  - first:
+      74: 7400158
+    second: StrafeWalkLShield
+  - first:
+      74: 7400160
+    second: StrafeWalkR
+  - first:
+      74: 7400162
+    second: StrafeWalkRShield
+  - first:
+      74: 7400164
+    second: Taunt01
+  - first:
+      74: 7400166
+    second: Taunt02
+  - first:
+      74: 7400168
+    second: Taunt03
+  - first:
+      74: 7400170
+    second: Taunt04
+  - first:
+      74: 7400172
+    second: TauntShield
+  - first:
+      74: 7400174
+    second: TauntShieldLoop
+  - first:
+      74: 7400176
+    second: WalkBack
+  - first:
+      74: 7400178
+    second: WalkBackShield
+  - first:
+      74: 7400180
+    second: WalkForward
+  - first:
+      74: 7400182
+    second: WalkForwardShield
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: AnimModel
+  - first:
+      137: 13700002
+    second: Shield
+  - first:
+      137: 13700004
+    second: Sword
+  externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: 'MuscleClip ''OneHandShieldComplete'' conversion warning:
-      ''Armature/Hip/LowerSpine/MiddleSpine'' is between humanoid transforms and has
-      rotation animation. This might lower retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''OneHandShieldComplete'' conversion warning: ''Armature/Hip/LowerSpine/MiddleSpine''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-'
+    animationImportWarnings: "\nClip 'Airborne' has import animation warnings that
+      might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'MiddleSpine' is inbetween humanoid transforms
+      and has rotation animation that will be discarded.\n\nClip 'AirborneLand' has
+      import animation warnings that might lower retargeting quality:\nNote: Activate
+      translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Attack01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Attack02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Attack03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Attack04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'AttackRM01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'AttackRM02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'AttackRM03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'AttackRM04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Backstab' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BackstabGetHit' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BackstabGetHitGetUp' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BlockHit' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BlockIdle' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BlockShieldHit' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'BlockShieldIdle' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Death01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Death01GetUp' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Death02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Death02GetUp' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Deflect01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Deflect02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'DeflectShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'DeflectStagger' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'DeflectStaggerShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge05' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge06' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge07' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge08' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge09' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Dodge10' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'DrinkL' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'DrinkR' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'EatL' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'EatR' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitBack' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitFront' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitLeft01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitLeft02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitRight01' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'GetHitRight02' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleLoop01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleLoop02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleRandom01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleRandom02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleRandom03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'IdleRandom04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Jump' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Kick' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'KickRM' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Knockdown01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Knockdown01GetUp' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Knockdown02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Knockdown02GetUp' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Parry' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ParryShield' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Run' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'RunShield' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ShieldBash01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'ShieldBash02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Skill01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Skill02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Skill03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Skill03NoRoot' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Skill04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StaggerBack' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StaggerForward' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StaggerLeft' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StaggerRight' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeRunL' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeRunLShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeRunR' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeRunRShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeWalkL' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeWalkLShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeWalkR' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'StrafeWalkRShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Taunt01' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Taunt02' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Taunt03' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'Taunt04' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'TauntShield' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'TauntShieldLoop' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'WalkBack' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'WalkBackShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'WalkForward' has import animation warnings that might lower retargeting quality:\nNote:
+      Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\nClip
+      'WalkForwardShield' has import animation warnings that might lower retargeting
+      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'MiddleSpine'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 3
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Airborne
       takeName: Airborne
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -708,6 +957,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -838,9 +1088,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: AirborneLand
       takeName: AirborneLand
+      internalID: 0
       firstFrame: 0
       lastFrame: 24
       wrapMode: 0
@@ -848,6 +1100,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -978,9 +1231,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack01
       takeName: Attack01
+      internalID: 0
       firstFrame: 0
       lastFrame: 79
       wrapMode: 0
@@ -988,6 +1243,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1118,9 +1374,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack02
       takeName: Attack02
+      internalID: 0
       firstFrame: 0
       lastFrame: 78
       wrapMode: 0
@@ -1128,6 +1386,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1258,9 +1517,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack03
       takeName: Attack03
+      internalID: 0
       firstFrame: 0
       lastFrame: 79
       wrapMode: 0
@@ -1268,6 +1529,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1398,9 +1660,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Attack04
       takeName: Attack04
+      internalID: 0
       firstFrame: 0
       lastFrame: 80
       wrapMode: 0
@@ -1408,6 +1672,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1538,9 +1803,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: AttackRM01
       takeName: AttackRM01
+      internalID: 0
       firstFrame: 0
       lastFrame: 71
       wrapMode: 0
@@ -1548,6 +1815,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1678,9 +1946,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: AttackRM02
       takeName: AttackRM02
+      internalID: 0
       firstFrame: 0
       lastFrame: 68
       wrapMode: 0
@@ -1688,6 +1958,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1818,9 +2089,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: AttackRM03
       takeName: AttackRM03
+      internalID: 0
       firstFrame: 0
       lastFrame: 70
       wrapMode: 0
@@ -1828,6 +2101,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -1958,9 +2232,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: AttackRM04
       takeName: AttackRM04
+      internalID: 0
       firstFrame: 0
       lastFrame: 58
       wrapMode: 0
@@ -1968,6 +2244,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2098,9 +2375,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Backstab
       takeName: Backstab
+      internalID: 0
       firstFrame: 0
       lastFrame: 100
       wrapMode: 0
@@ -2108,6 +2387,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2238,9 +2518,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BackstabGetHit
       takeName: BackstabGetHit
+      internalID: 0
       firstFrame: 0
       lastFrame: 100
       wrapMode: 0
@@ -2248,6 +2530,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2378,9 +2661,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BackstabGetHitGetUp
       takeName: BackstabGetHitGetUp
+      internalID: 0
       firstFrame: 0
       lastFrame: 92
       wrapMode: 0
@@ -2388,6 +2673,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2518,9 +2804,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BlockHit
       takeName: BlockHit
+      internalID: 0
       firstFrame: 0
       lastFrame: 35
       wrapMode: 0
@@ -2528,6 +2816,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2658,9 +2947,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BlockIdle
       takeName: BlockIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 89
       wrapMode: 0
@@ -2668,6 +2959,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2798,9 +3090,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BlockShieldHit
       takeName: BlockShieldHit
+      internalID: 0
       firstFrame: 0
       lastFrame: 35
       wrapMode: 0
@@ -2808,6 +3102,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -2938,9 +3233,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: BlockShieldIdle
       takeName: BlockShieldIdle
+      internalID: 0
       firstFrame: 0
       lastFrame: 89
       wrapMode: 0
@@ -2948,6 +3245,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3078,9 +3376,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Death01
       takeName: Death01
+      internalID: 0
       firstFrame: 0
       lastFrame: 110
       wrapMode: 0
@@ -3088,6 +3388,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3218,9 +3519,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Death01GetUp
       takeName: Death01GetUp
+      internalID: 0
       firstFrame: 0
       lastFrame: 96
       wrapMode: 0
@@ -3228,6 +3531,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3358,9 +3662,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Death02
       takeName: Death02
+      internalID: 0
       firstFrame: 0
       lastFrame: 65
       wrapMode: 0
@@ -3368,6 +3674,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3498,9 +3805,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Death02GetUp
       takeName: Death02GetUp
+      internalID: 0
       firstFrame: -1
       lastFrame: 99
       wrapMode: 0
@@ -3508,6 +3817,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3638,9 +3948,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Deflect01
       takeName: Deflect01
+      internalID: 0
       firstFrame: -1
       lastFrame: 62
       wrapMode: 0
@@ -3648,6 +3960,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3778,9 +4091,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Deflect02
       takeName: Deflect02
+      internalID: 0
       firstFrame: -1
       lastFrame: 51
       wrapMode: 0
@@ -3788,6 +4103,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -3918,9 +4234,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: DeflectShield
       takeName: DeflectShield
+      internalID: 0
       firstFrame: -1
       lastFrame: 47
       wrapMode: 0
@@ -3928,6 +4246,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4058,9 +4377,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: DeflectStagger
       takeName: DeflectStagger
+      internalID: 0
       firstFrame: -1
       lastFrame: 49
       wrapMode: 0
@@ -4068,6 +4389,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4198,9 +4520,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: DeflectStaggerShield
       takeName: DeflectStaggerShield
+      internalID: 0
       firstFrame: -1
       lastFrame: 54
       wrapMode: 0
@@ -4208,6 +4532,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4338,9 +4663,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge01
       takeName: Dodge01
+      internalID: 0
       firstFrame: -1
       lastFrame: 41
       wrapMode: 0
@@ -4348,6 +4675,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4478,9 +4806,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge02
       takeName: Dodge02
+      internalID: 0
       firstFrame: -1
       lastFrame: 36
       wrapMode: 0
@@ -4488,6 +4818,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4618,9 +4949,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge03
       takeName: Dodge03
+      internalID: 0
       firstFrame: -1
       lastFrame: 33
       wrapMode: 0
@@ -4628,6 +4961,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4758,9 +5092,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge04
       takeName: Dodge04
+      internalID: 0
       firstFrame: -1
       lastFrame: 43
       wrapMode: 0
@@ -4768,6 +5104,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -4898,9 +5235,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge05
       takeName: Dodge05
+      internalID: 0
       firstFrame: -1
       lastFrame: 68
       wrapMode: 0
@@ -4908,6 +5247,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5038,9 +5378,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge06
       takeName: Dodge06
+      internalID: 0
       firstFrame: -1
       lastFrame: 68
       wrapMode: 0
@@ -5048,6 +5390,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5178,9 +5521,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge07
       takeName: Dodge07
+      internalID: 0
       firstFrame: -1
       lastFrame: 44
       wrapMode: 0
@@ -5188,6 +5533,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5318,9 +5664,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge08
       takeName: Dodge08
+      internalID: 0
       firstFrame: -1
       lastFrame: 65
       wrapMode: 0
@@ -5328,6 +5676,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5458,9 +5807,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge09
       takeName: Dodge09
+      internalID: 0
       firstFrame: -1
       lastFrame: 45
       wrapMode: 0
@@ -5468,6 +5819,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5598,9 +5950,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Dodge10
       takeName: Dodge10
+      internalID: 0
       firstFrame: -1
       lastFrame: 47
       wrapMode: 0
@@ -5608,6 +5962,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5738,9 +6093,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: DrinkL
       takeName: DrinkL
+      internalID: 0
       firstFrame: -1
       lastFrame: 74
       wrapMode: 0
@@ -5748,6 +6105,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -5878,9 +6236,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: DrinkR
       takeName: DrinkR
+      internalID: 0
       firstFrame: -1
       lastFrame: 63
       wrapMode: 0
@@ -5888,6 +6248,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6018,9 +6379,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EatL
       takeName: EatL
+      internalID: 0
       firstFrame: -1
       lastFrame: 111
       wrapMode: 0
@@ -6028,6 +6391,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6158,9 +6522,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: EatR
       takeName: EatR
+      internalID: 0
       firstFrame: -1
       lastFrame: 103
       wrapMode: 0
@@ -6168,6 +6534,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6298,9 +6665,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitBack
       takeName: GetHitBack
+      internalID: 0
       firstFrame: -1
       lastFrame: 42
       wrapMode: 0
@@ -6308,6 +6677,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6438,9 +6808,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitFront
       takeName: GetHitFront
+      internalID: 0
       firstFrame: -1
       lastFrame: 38
       wrapMode: 0
@@ -6448,6 +6820,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6578,9 +6951,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitLeft01
       takeName: GetHitLeft01
+      internalID: 0
       firstFrame: -1
       lastFrame: 41
       wrapMode: 0
@@ -6588,6 +6963,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6718,9 +7094,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitLeft02
       takeName: GetHitLeft02
+      internalID: 0
       firstFrame: -1
       lastFrame: 48
       wrapMode: 0
@@ -6728,6 +7106,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6858,9 +7237,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitRight01
       takeName: GetHitRight01
+      internalID: 0
       firstFrame: -1
       lastFrame: 38
       wrapMode: 0
@@ -6868,6 +7249,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -6998,9 +7380,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: GetHitRight02
       takeName: GetHitRight02
+      internalID: 0
       firstFrame: -1
       lastFrame: 49
       wrapMode: 0
@@ -7008,6 +7392,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -7138,9 +7523,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleLoop01
       takeName: IdleLoop01
+      internalID: 0
       firstFrame: 0
       lastFrame: 59
       wrapMode: 0
@@ -7148,8 +7535,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
@@ -7278,9 +7666,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleLoop02
       takeName: IdleLoop02
+      internalID: 0
       firstFrame: 0
       lastFrame: 99
       wrapMode: 0
@@ -7288,8 +7678,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
@@ -7418,9 +7809,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleRandom01
       takeName: IdleRandom01
+      internalID: 0
       firstFrame: -1
       lastFrame: 132
       wrapMode: 0
@@ -7428,6 +7821,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -7558,9 +7952,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleRandom02
       takeName: IdleRandom02
+      internalID: 0
       firstFrame: -1
       lastFrame: 77
       wrapMode: 0
@@ -7568,6 +7964,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -7698,9 +8095,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleRandom03
       takeName: IdleRandom03
+      internalID: 0
       firstFrame: -1
       lastFrame: 121
       wrapMode: 0
@@ -7708,6 +8107,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -7838,9 +8238,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: IdleRandom04
       takeName: IdleRandom04
+      internalID: 0
       firstFrame: -1
       lastFrame: 113
       wrapMode: 0
@@ -7848,6 +8250,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -7978,9 +8381,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Jump
       takeName: Jump
+      internalID: 0
       firstFrame: -1
       lastFrame: 44
       wrapMode: 0
@@ -7988,6 +8393,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8118,9 +8524,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Kick
       takeName: Kick
+      internalID: 0
       firstFrame: -1
       lastFrame: 55
       wrapMode: 0
@@ -8128,6 +8536,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8258,9 +8667,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: KickRM
       takeName: KickRM
+      internalID: 0
       firstFrame: -1
       lastFrame: 55
       wrapMode: 0
@@ -8268,6 +8679,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8398,9 +8810,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Knockdown01
       takeName: Knockdown01
+      internalID: 0
       firstFrame: -1
       lastFrame: 67
       wrapMode: 0
@@ -8408,6 +8822,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8538,9 +8953,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Knockdown01GetUp
       takeName: Knockdown01GetUp
+      internalID: 0
       firstFrame: -1
       lastFrame: 109
       wrapMode: 0
@@ -8548,6 +8965,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8678,9 +9096,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Knockdown02
       takeName: Knockdown02
+      internalID: 0
       firstFrame: -1
       lastFrame: 53
       wrapMode: 0
@@ -8688,6 +9108,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8818,9 +9239,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Knockdown02GetUp
       takeName: Knockdown02GetUp
+      internalID: 0
       firstFrame: -1
       lastFrame: 132
       wrapMode: 0
@@ -8828,6 +9251,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -8958,9 +9382,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Parry
       takeName: Parry
+      internalID: 0
       firstFrame: -1
       lastFrame: 56
       wrapMode: 0
@@ -8968,6 +9394,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9098,9 +9525,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: ParryShield
       takeName: ParryShield
+      internalID: 0
       firstFrame: -1
       lastFrame: 49
       wrapMode: 0
@@ -9108,6 +9537,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9238,9 +9668,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Run
       takeName: Run
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -9248,6 +9680,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9378,9 +9811,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: RunShield
       takeName: RunShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 28
       wrapMode: 0
@@ -9388,6 +9823,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9518,9 +9954,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: ShieldBash01
       takeName: ShieldBash01
+      internalID: 0
       firstFrame: -1
       lastFrame: 49
       wrapMode: 0
@@ -9528,6 +9966,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9658,9 +10097,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: ShieldBash02
       takeName: ShieldBash02
+      internalID: 0
       firstFrame: -1
       lastFrame: 34
       wrapMode: 0
@@ -9668,6 +10109,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9798,9 +10240,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill01
       takeName: Skill01
+      internalID: 0
       firstFrame: -1
       lastFrame: 77
       wrapMode: 0
@@ -9808,6 +10252,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -9938,9 +10383,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill02
       takeName: Skill02
+      internalID: 0
       firstFrame: -1
       lastFrame: 118
       wrapMode: 0
@@ -9948,6 +10395,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10078,9 +10526,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill03
       takeName: Skill03
+      internalID: 0
       firstFrame: -1
       lastFrame: 121
       wrapMode: 0
@@ -10088,6 +10538,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10218,9 +10669,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill03NoRoot
       takeName: Skill03NoRoot
+      internalID: 0
       firstFrame: -1
       lastFrame: 121
       wrapMode: 0
@@ -10228,6 +10681,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10358,9 +10812,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Skill04
       takeName: Skill04
+      internalID: 0
       firstFrame: -1
       lastFrame: 134
       wrapMode: 0
@@ -10368,6 +10824,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10498,9 +10955,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StaggerBack
       takeName: StaggerBack
+      internalID: 0
       firstFrame: -1
       lastFrame: 57
       wrapMode: 0
@@ -10508,6 +10967,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10638,9 +11098,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StaggerForward
       takeName: StaggerForward
+      internalID: 0
       firstFrame: -1
       lastFrame: 72
       wrapMode: 0
@@ -10648,6 +11110,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10778,9 +11241,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StaggerLeft
       takeName: StaggerLeft
+      internalID: 0
       firstFrame: -1
       lastFrame: 65
       wrapMode: 0
@@ -10788,6 +11253,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -10918,9 +11384,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StaggerRight
       takeName: StaggerRight
+      internalID: 0
       firstFrame: -1
       lastFrame: 51
       wrapMode: 0
@@ -10928,6 +11396,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11058,9 +11527,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeRunL
       takeName: StrafeRunL
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -11068,6 +11539,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11198,9 +11670,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeRunLShield
       takeName: StrafeRunLShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -11208,6 +11682,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11338,9 +11813,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeRunR
       takeName: StrafeRunR
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -11348,6 +11825,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11478,9 +11956,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeRunRShield
       takeName: StrafeRunRShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -11488,6 +11968,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11618,9 +12099,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeWalkL
       takeName: StrafeWalkL
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -11628,8 +12111,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -11758,9 +12242,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeWalkLShield
       takeName: StrafeWalkLShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -11768,6 +12254,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -11898,9 +12385,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeWalkR
       takeName: StrafeWalkR
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -11908,8 +12397,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -12038,9 +12528,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: StrafeWalkRShield
       takeName: StrafeWalkRShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -12048,6 +12540,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12178,9 +12671,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Taunt01
       takeName: Taunt01
+      internalID: 0
       firstFrame: -1
       lastFrame: 90
       wrapMode: 0
@@ -12188,6 +12683,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12318,9 +12814,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Taunt02
       takeName: Taunt02
+      internalID: 0
       firstFrame: -1
       lastFrame: 67
       wrapMode: 0
@@ -12328,6 +12826,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12458,9 +12957,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Taunt03
       takeName: Taunt03
+      internalID: 0
       firstFrame: -1
       lastFrame: 55
       wrapMode: 0
@@ -12468,6 +12969,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12598,9 +13100,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Taunt04
       takeName: Taunt04
+      internalID: 0
       firstFrame: -1
       lastFrame: 71
       wrapMode: 0
@@ -12608,6 +13112,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12738,9 +13243,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: TauntShield
       takeName: TauntShield
+      internalID: 0
       firstFrame: -1
       lastFrame: 109
       wrapMode: 0
@@ -12748,6 +13255,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -12878,9 +13386,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: TauntShieldLoop
       takeName: TauntShieldLoop
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -12888,6 +13398,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
@@ -13018,9 +13529,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkBack
       takeName: WalkBack
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -13028,8 +13541,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -13158,9 +13672,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkBackShield
       takeName: WalkBackShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -13168,8 +13684,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -13298,9 +13815,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkForward
       takeName: WalkForward
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -13308,8 +13827,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -13438,9 +13958,11 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: WalkForwardShield
       takeName: WalkForwardShield
+      internalID: 0
       firstFrame: 0
       lastFrame: 29
       wrapMode: 0
@@ -13448,8 +13970,9 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -13578,19 +14101,31 @@ ModelImporter:
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -13598,12 +14133,16 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 0
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human:
     - boneName: Hip
       humanName: Hips
@@ -14015,300 +14554,307 @@ ModelImporter:
         modified: 0
     skeleton:
     - name: OneHandComplete(Clone)
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: AnimModel
-      position: {x: 0, y: .0115618389, z: .468609601}
+      parentName: 
+      position: {x: 0, y: 0.011561839, z: 0.4686096}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Armature
+      parentName: 
       position: {x: 0, y: 0, z: 0}
-      rotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Hip
-      position: {x: 0, y: -1.03256028e-07, z: .866174281}
-      rotation: {x: .402301401, y: .402301401, z: -.581509709, w: .581509769}
-      scale: {x: .99999994, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: 0, y: -0.00000010325603, z: 0.8661743}
+      rotation: {x: 0.4023014, y: 0.4023014, z: -0.5815097, w: 0.58150977}
+      scale: {x: 0.99999994, y: 1, z: 1}
     - name: LowerSpine
-      position: {x: -.10203363, y: 7.70332509e-09, z: -.0139270211}
-      rotation: {x: 1.54630406e-08, y: .204814211, z: -1.52253389e-15, w: .978800893}
-      scale: {x: .99999994, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.10203363, y: 0.000000007703325, z: -0.013927021}
+      rotation: {x: 0.00000001546304, y: 0.20481421, z: -1.5225339e-15, w: 0.9788009}
+      scale: {x: 0.99999994, y: 1, z: 1}
     - name: MiddleSpine
-      position: {x: -.0827636495, y: 6.24848129e-09, z: -1.19209287e-09}
-      rotation: {x: -1.02064783e-08, y: -.135188907, z: -1.6693013e-16, w: .990819871}
+      parentName: 
+      position: {x: -0.08276365, y: 0.0000000062484813, z: -0.0000000011920929}
+      rotation: {x: -0.000000010206478, y: -0.1351889, z: -1.6693013e-16, w: 0.9908199}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Chest
-      position: {x: -.10477405, y: 7.9102227e-09, z: -1.7881393e-09}
-      rotation: {x: 1.62629341e-08, y: .215409115, z: 7.17960902e-16, w: .976523936}
-      scale: {x: .99999994, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.10477405, y: 0.000000007910223, z: -0.0000000017881393}
+      rotation: {x: 0.000000016262934, y: 0.21540911, z: 7.179609e-16, w: 0.97652394}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: LClavicle
-      position: {x: -.233551502, y: -.0232669823, z: .0269479025}
-      rotation: {x: -.090625681, y: -.280406326, z: .606504023, w: .738452554}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.2335515, y: -0.023266982, z: 0.026947903}
+      rotation: {x: -0.09062568, y: -0.28040633, z: 0.606504, w: 0.73845255}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: LShoulder
-      position: {x: -.148861006, y: -9.53674295e-09, z: 2.14576712e-08}
-      rotation: {x: .154018015, y: .152279243, z: .138343215, w: .966411233}
-      scale: {x: .99999994, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.148861, y: -0.000000009536743, z: 0.000000021457671}
+      rotation: {x: 0.15401801, y: 0.15227924, z: 0.13834321, w: 0.96641123}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
     - name: LForearm
-      position: {x: -.288756698, y: -2.27242714e-09, z: 8.94069652e-10}
-      rotation: {x: .00133750786, y: .00136078161, z: -.00321575627, w: .999993026}
-      scale: {x: 1, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.2887567, y: -0.0000000022724271, z: 8.9406965e-10}
+      rotation: {x: 0.0013375079, y: 0.0013607816, z: -0.0032157563, w: 0.999993}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: LHand
-      position: {x: -.240878284, y: -3.60049306e-08, z: -8.94069652e-10}
-      rotation: {x: -.0167475864, y: -.0167798828, z: -.0027830468, w: .99971509}
-      scale: {x: 1, y: .99999994, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.24087828, y: -0.00000003600493, z: -8.9406965e-10}
+      rotation: {x: -0.016747586, y: -0.016779883, z: -0.0027830468, w: 0.9997151}
+      scale: {x: 1, y: 0.99999994, z: 1}
     - name: LFinger0
-      position: {x: -.0186020005, y: -.0153596615, z: .0147968372}
-      rotation: {x: .340478688, y: .318575531, z: -.140436798, w: .873419464}
-      scale: {x: 1, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.018602, y: -0.015359662, z: 0.014796837}
+      rotation: {x: 0.3404787, y: 0.31857553, z: -0.1404368, w: 0.87341946}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: LFinger01
-      position: {x: -.0465521701, y: -1.46031374e-08, z: -2.98023217e-10}
-      rotation: {x: -.0137499189, y: -.000691460446, z: .0167050511, w: .999765694}
-      scale: {x: .99999994, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.04655217, y: -0.000000014603137, z: -2.9802322e-10}
+      rotation: {x: -0.013749919, y: -0.00069146045, z: 0.016705051, w: 0.9997657}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: LFinger02
-      position: {x: -.0303866528, y: -7.74860354e-09, z: -1.17421145e-07}
-      rotation: {x: -.0152504984, y: -.0110760722, z: .00421855366, w: .999813437}
-      scale: {x: .99999994, y: 1, z: 1.00000012}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.030386653, y: -0.0000000077486035, z: -0.000000117421145}
+      rotation: {x: -0.015250498, y: -0.011076072, z: 0.0042185537, w: 0.99981344}
+      scale: {x: 0.99999994, y: 1, z: 1.0000001}
     - name: LFinger1
-      position: {x: -.0923133343, y: .00627303682, z: .0298834108}
-      rotation: {x: .0602248497, y: .100794651, z: -.0392266549, w: .992307723}
-      scale: {x: 1.00000012, y: 1.00000012, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.092313334, y: 0.006273037, z: 0.02988341}
+      rotation: {x: 0.06022485, y: 0.10079465, z: -0.039226655, w: 0.9923077}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: LFinger11
-      position: {x: -.0364660434, y: -3.30805783e-08, z: 1.31130218e-08}
-      rotation: {x: 3.74680421e-05, y: 3.90326641e-05, z: 5.14071507e-05, w: 1}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.036466043, y: -0.00000003308058, z: 0.000000013113022}
+      rotation: {x: 0.000037468042, y: 0.000039032664, z: 0.00005140715, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: LFinger12
-      position: {x: -.024895383, y: -2.19047056e-08, z: -1.19209287e-09}
-      rotation: {x: -.00858412869, y: -.00226635323, z: .0261192098, w: .999619424}
-      scale: {x: 1, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.024895383, y: -0.000000021904706, z: -0.0000000011920929}
+      rotation: {x: -0.008584129, y: -0.0022663532, z: 0.02611921, w: 0.9996194}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
     - name: LFinger2
-      position: {x: -.0946546644, y: .00845393166, z: .00635428773}
-      rotation: {x: .0167907123, y: .0168209318, z: .00284458487, w: .99971348}
-      scale: {x: 1.00000012, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.094654664, y: 0.008453932, z: 0.0063542877}
+      rotation: {x: 0.016790712, y: 0.016820932, z: 0.0028445849, w: 0.9997135}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
     - name: LFinger21
-      position: {x: -.0431768708, y: 2.41026274e-08, z: 4.17232515e-09}
-      rotation: {x: -9.70857218e-05, y: -9.65627551e-05, z: -.000136320479, w: 1}
-      scale: {x: 1, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.04317687, y: 0.000000024102627, z: 0.000000004172325}
+      rotation: {x: -0.00009708572, y: -0.000096562755, z: -0.00013632048, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: LFinger22
-      position: {x: -.023931494, y: -3.36393704e-08, z: 2.6822089e-09}
-      rotation: {x: .00384799019, y: .00363545329, z: .0367756635, w: .99930954}
-      scale: {x: 1.00000012, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.023931494, y: -0.00000003363937, z: 0.000000002682209}
+      rotation: {x: 0.0038479902, y: 0.0036354533, z: 0.036775663, w: 0.99930954}
+      scale: {x: 1.0000001, y: 1, z: 1}
     - name: LFinger3
-      position: {x: -.0906115994, y: .00628955243, z: -.0174292922}
-      rotation: {x: -.0116682807, y: -.0128978956, z: .0284722168, w: .999443293}
-      scale: {x: 1, y: .99999994, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.0906116, y: 0.0062895524, z: -0.017429292}
+      rotation: {x: -0.011668281, y: -0.012897896, z: 0.028472217, w: 0.9994433}
+      scale: {x: 1, y: 0.99999994, z: 1}
     - name: LFinger31
-      position: {x: -.0393048413, y: 1.49011612e-08, z: 2.38418574e-09}
-      rotation: {x: -.000121743207, y: -.000104956678, z: -.000175342662, w: 1}
+      parentName: 
+      position: {x: -0.03930484, y: 0.000000014901161, z: 0.0000000023841857}
+      rotation: {x: -0.00012174321, y: -0.00010495668, z: -0.00017534266, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: LFinger32
-      position: {x: -.0223972071, y: -2.98023217e-10, z: -1.19209287e-09}
-      rotation: {x: .00842937827, y: .00574629661, z: .0363805741, w: .999285936}
+      parentName: 
+      position: {x: -0.022397207, y: -2.9802322e-10, z: -0.0000000011920929}
+      rotation: {x: 0.008429378, y: 0.0057462966, z: 0.036380574, w: 0.99928594}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: LFinger4
-      position: {x: -.0846632048, y: -.00565689057, z: -.0336052403}
-      rotation: {x: -.124283478, y: -.0230990648, z: .00556362467, w: .991962254}
-      scale: {x: 1, y: .999999881, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.084663205, y: -0.0056568906, z: -0.03360524}
+      rotation: {x: -0.12428348, y: -0.023099065, z: 0.0055636247, w: 0.99196225}
+      scale: {x: 1, y: 0.9999999, z: 1}
     - name: LFinger41
-      position: {x: -.0254992582, y: -2.86102289e-08, z: 1.90734859e-08}
-      rotation: {x: -9.77823438e-05, y: -4.93740772e-05, z: -.000121969744, w: 1}
-      scale: {x: .99999994, y: 1.00000012, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.025499258, y: -0.000000028610229, z: 0.000000019073486}
+      rotation: {x: -0.000097782344, y: -0.000049374077, z: -0.000121969744, w: 1}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
     - name: LFinger42
-      position: {x: -.0186984818, y: 2.62260436e-08, z: 1.90734859e-08}
-      rotation: {x: .0269973595, y: .0129903378, z: .036034096, w: .998901367}
-      scale: {x: .99999994, y: .999999881, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.018698482, y: 0.000000026226044, z: 0.000000019073486}
+      rotation: {x: 0.02699736, y: 0.012990338, z: 0.036034096, w: 0.99890137}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.99999994}
     - name: Neck
-      position: {x: -.224124655, y: 1.69209411e-08, z: -.0538958125}
-      rotation: {x: 1.90157512e-09, y: .025187131, z: 6.37328145e-18, w: .999682784}
-      scale: {x: .99999994, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.22412466, y: 0.000000016920941, z: -0.053895812}
+      rotation: {x: 0.0000000019015751, y: 0.025187131, z: 6.3732814e-18, w: 0.9996828}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
     - name: Head
-      position: {x: -.134874508, y: 1.01827391e-08, z: -2.38418574e-09}
-      rotation: {x: -3.7279321e-07, y: -.117592961, z: 2.72443344e-06, w: .9930619}
+      parentName: 
+      position: {x: -0.13487451, y: 0.000000010182739, z: -0.0000000023841857}
+      rotation: {x: -0.0000003727932, y: -0.11759296, z: 0.0000027244334, w: 0.9930619}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: RClavicle
-      position: {x: -.233551502, y: .0232670158, z: .0269479025}
-      rotation: {x: .0906163454, y: -.280411601, z: -.606499791, w: .738455176}
-      scale: {x: 1, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.2335515, y: 0.023267016, z: 0.026947903}
+      rotation: {x: 0.090616345, y: -0.2804116, z: -0.6064998, w: 0.7384552}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: RShoulder
-      position: {x: -.14888677, y: 4.05311589e-08, z: -1.19209282e-08}
-      rotation: {x: -.154015481, y: .152276486, z: -.138341144, w: .966412365}
-      scale: {x: .99999994, y: .999999881, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.14888677, y: 0.00000004053116, z: -0.000000011920928}
+      rotation: {x: -0.15401548, y: 0.15227649, z: -0.13834114, w: 0.96641237}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
     - name: RForearm
-      position: {x: -.288756639, y: 7.7858564e-09, z: 2.08616258e-09}
-      rotation: {x: -.00133755337, y: .00136075879, z: .00321656489, w: .999993026}
-      scale: {x: .999999881, y: .999999881, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.28875664, y: 0.000000007785856, z: 0.0000000020861626}
+      rotation: {x: -0.0013375534, y: 0.0013607588, z: 0.003216565, w: 0.999993}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
     - name: RHand
-      position: {x: -.240878314, y: 5.62518814e-08, z: 2.38418574e-09}
-      rotation: {x: .016747551, y: -.0167798381, z: .00278437836, w: .99971509}
-      scale: {x: 1, y: .99999994, z: 1.00000012}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.24087831, y: 0.00000005625188, z: 0.0000000023841857}
+      rotation: {x: 0.016747551, y: -0.016779838, z: 0.0027843784, w: 0.9997151}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: RFinger0
-      position: {x: -.018601995, y: .0153596634, z: .014796841}
-      rotation: {x: -.340478241, y: .318575382, z: .140438706, w: .873419344}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.018601995, y: 0.015359663, z: 0.014796841}
+      rotation: {x: -0.34047824, y: 0.31857538, z: 0.1404387, w: 0.87341934}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: RFinger01
-      position: {x: -.0465521738, y: 2.38418565e-08, z: -2.35438335e-08}
-      rotation: {x: .0137498844, y: -.000691460446, z: -.0167051181, w: .999765694}
-      scale: {x: .99999994, y: .99999994, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.046552174, y: 0.000000023841856, z: -0.000000023543834}
+      rotation: {x: 0.013749884, y: -0.00069146045, z: -0.016705118, w: 0.9997657}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: RFinger02
-      position: {x: -.0303865969, y: 2.32458106e-08, z: -1.2516975e-08}
-      rotation: {x: .0152504714, y: -.0110759865, z: -.00421860721, w: .999813437}
-      scale: {x: 1, y: 1.00000012, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.030386597, y: 0.00000002324581, z: -0.000000012516975}
+      rotation: {x: 0.015250471, y: -0.011075987, z: -0.004218607, w: 0.99981344}
+      scale: {x: 1, y: 1.0000001, z: 1}
     - name: RFinger1
-      position: {x: -.092313394, y: -.00627279282, z: .029883394}
-      rotation: {x: -.0602234788, y: .100794263, z: .0392306224, w: .992307723}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.092313394, y: -0.006272793, z: 0.029883394}
+      rotation: {x: -0.06022348, y: 0.10079426, z: 0.039230622, w: 0.9923077}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: RFinger11
-      position: {x: -.0364660062, y: -7.74860354e-08, z: -1.43051144e-08}
-      rotation: {x: -3.7482936e-05, y: 3.91127542e-05, z: -5.1389452e-05, w: 1}
-      scale: {x: .999999881, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.036466006, y: -0.000000077486035, z: -0.000000014305114}
+      rotation: {x: -0.000037482936, y: 0.000039112754, z: -0.000051389452, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1}
     - name: RFinger12
-      position: {x: -.0248954967, y: -1.13248824e-08, z: -8.3446503e-09}
-      rotation: {x: .00858414453, y: -.0022663353, z: -.0261192862, w: .999619424}
-      scale: {x: 1.00000012, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.024895497, y: -0.000000011324882, z: -0.00000000834465}
+      rotation: {x: 0.0085841445, y: -0.0022663353, z: -0.026119286, w: 0.9996194}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
     - name: RFinger2
-      position: {x: -.0946547315, y: -.00845471025, z: .00635432452}
-      rotation: {x: -.0167906713, y: .0168208946, z: -.00284580817, w: .99971348}
-      scale: {x: 1.00000012, y: .99999994, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.09465473, y: -0.00845471, z: 0.0063543245}
+      rotation: {x: -0.016790671, y: 0.016820895, z: -0.0028458082, w: 0.9997135}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
     - name: RFinger21
-      position: {x: -.0431769229, y: -2.27242714e-09, z: 1.19209287e-09}
-      rotation: {x: 9.70810215e-05, y: -9.65676081e-05, z: .000136290604, w: 1}
-      scale: {x: 1, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.043176923, y: -0.0000000022724271, z: 0.0000000011920929}
+      rotation: {x: 0.00009708102, y: -0.00009656761, z: 0.0001362906, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: RFinger22
-      position: {x: -.0239315163, y: -2.0433216e-08, z: -8.94069652e-10}
-      rotation: {x: -.00384799228, y: .00363546144, z: -.0367757268, w: .99930954}
-      scale: {x: 1.00000012, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.023931516, y: -0.000000020433216, z: -8.9406965e-10}
+      rotation: {x: -0.0038479923, y: 0.0036354614, z: -0.036775727, w: 0.99930954}
+      scale: {x: 1.0000001, y: 1, z: 1}
     - name: RFinger3
-      position: {x: -.0906116441, y: -.00628931262, z: -.0174292959}
-      rotation: {x: .0116682686, y: -.0128979385, z: -.0284734443, w: .999443233}
-      scale: {x: .99999994, y: .99999994, z: .999999881}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.090611644, y: -0.0062893126, z: -0.017429296}
+      rotation: {x: 0.011668269, y: -0.0128979385, z: -0.028473444, w: 0.99944323}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
     - name: RFinger31
-      position: {x: -.0393047892, y: 5.06639459e-08, z: -1.19209287e-09}
-      rotation: {x: .000121745601, y: -.000104982348, z: .000175225083, w: 1}
-      scale: {x: 1, y: .99999994, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.03930479, y: 0.000000050663946, z: -0.0000000011920929}
+      rotation: {x: 0.0001217456, y: -0.00010498235, z: 0.00017522508, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
     - name: RFinger32
-      position: {x: -.0223971941, y: 3.09944141e-08, z: 1.19209287e-09}
-      rotation: {x: -.008429382, y: .00574630313, z: -.0363805257, w: .999285936}
+      parentName: 
+      position: {x: -0.022397194, y: 0.000000030994414, z: 0.0000000011920929}
+      rotation: {x: -0.008429382, y: 0.005746303, z: -0.036380526, w: 0.99928594}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: RFinger4
-      position: {x: -.0846632272, y: .00565711595, z: -.0336052179}
-      rotation: {x: .124283105, y: -.0230985675, z: -.00556039903, w: .991962314}
+      parentName: 
+      position: {x: -0.08466323, y: 0.005657116, z: -0.033605218}
+      rotation: {x: 0.124283105, y: -0.023098568, z: -0.005560399, w: 0.9919623}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: RFinger41
-      position: {x: -.0254991557, y: 7.39097601e-08, z: 5.72204577e-08}
-      rotation: {x: 9.77469754e-05, y: -4.24217505e-05, z: .000146979495, w: 1}
-      scale: {x: .999999881, y: .999999881, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.025499156, y: 0.00000007390976, z: 0.000000057220458}
+      rotation: {x: 0.000097746975, y: -0.00004242175, z: 0.0001469795, w: 1}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
     - name: RFinger42
-      position: {x: -.0186983813, y: -5.48362706e-08, z: -2.86102289e-08}
-      rotation: {x: -.0269967541, y: .0129840625, z: -.0360593088, w: .998900592}
-      scale: {x: 1, y: 1, z: 1.00000012}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.018698381, y: -0.00000005483627, z: -0.000000028610229}
+      rotation: {x: -0.026996754, y: 0.012984063, z: -0.03605931, w: 0.9989006}
+      scale: {x: 1, y: 1, z: 1.0000001}
     - name: LThigh
-      position: {x: -.0411291644, y: -.0968859941, z: .00696404278}
-      rotation: {x: .179200947, y: .00164824154, z: .983769476, w: .00904868543}
-      scale: {x: 1.00000036, y: 1, z: 1.00000131}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.041129164, y: -0.096885994, z: 0.006964043}
+      rotation: {x: 0.17920095, y: 0.0016482415, z: 0.9837695, w: 0.009048685}
+      scale: {x: 1.0000004, y: 1, z: 1.0000013}
     - name: LShin
-      position: {x: -.421486318, y: 2.96529912e-08, z: 7.31464667e-10}
-      rotation: {x: 1.14548648e-07, y: -5.64975933e-09, z: .0091976095, w: .99995774}
-      scale: {x: .99999994, y: .99999994, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.42148632, y: 0.000000029652991, z: 7.3146467e-10}
+      rotation: {x: 0.00000011454865, y: -0.0000000056497593, z: 0.0091976095, w: 0.99995774}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: LFoot
-      position: {x: -.413800865, y: 3.21369953e-08, z: -2.4626387e-10}
-      rotation: {x: .845996797, y: -7.94712776e-08, z: -.533187985, w: 4.9206605e-08}
-      scale: {x: 1.00000012, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.41380087, y: 0.000000032136995, z: -2.4626387e-10}
+      rotation: {x: 0.8459968, y: -0.00000007947128, z: -0.533188, w: 0.000000049206605}
+      scale: {x: 1.0000001, y: 1, z: 0.99999994}
     - name: LToe
-      position: {x: -.105421282, y: 5.02241315e-09, z: 1.79528659e-08}
-      rotation: {x: 5.8099566e-08, y: -.221189588, z: 1.68529868e-09, w: .975230813}
-      scale: {x: 1.00000012, y: 1, z: 1.00000012}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.10542128, y: 0.000000005022413, z: 0.000000017952866}
+      rotation: {x: 0.000000058099566, y: -0.22118959, z: 0.0000000016852987, w: 0.9752308}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
     - name: RThigh
-      position: {x: -.0411263406, y: .0968859941, z: .00696298573}
-      rotation: {x: .179200992, y: -.00164838275, z: .983769476, w: -.00904877298}
-      scale: {x: 1.00000024, y: 1, z: 1.00000143}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.04112634, y: 0.096885994, z: 0.0069629857}
+      rotation: {x: 0.17920099, y: -0.0016483827, z: 0.9837695, w: -0.009048773}
+      scale: {x: 1.0000002, y: 1, z: 1.0000014}
     - name: RShin
-      position: {x: -.421483308, y: 3.94937274e-08, z: 1.19214294e-09}
-      rotation: {x: 8.46430481e-08, y: -5.4445608e-09, z: -.00919767004, w: .99995774}
+      parentName: 
+      position: {x: -0.4214833, y: 0.000000039493727, z: 0.0000000011921429}
+      rotation: {x: 0.00000008464305, y: -0.000000005444561, z: -0.00919767, w: 0.99995774}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: RFoot
-      position: {x: -.413800985, y: 4.16737471e-08, z: -1.85171406e-10}
-      rotation: {x: .845995426, y: -7.94724286e-08, z: -.533190131, w: 4.92047185e-08}
-      scale: {x: 1.00000024, y: 1, z: 1}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.41380098, y: 0.000000041673747, z: -1.851714e-10}
+      rotation: {x: 0.8459954, y: -0.00000007947243, z: -0.53319013, w: 0.00000004920472}
+      scale: {x: 1.0000002, y: 1, z: 1}
     - name: RToe
-      position: {x: -.105419926, y: -4.51479476e-09, z: -6.55461605e-08}
-      rotation: {x: 5.80998112e-08, y: -.221187145, z: 1.68511938e-09, w: .975231409}
-      scale: {x: 1, y: 1, z: .99999994}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.10541993, y: -0.0000000045147948, z: -0.00000006554616}
+      rotation: {x: 0.00000005809981, y: -0.22118714, z: 0.0000000016851194, w: 0.9752314}
+      scale: {x: 1, y: 1, z: 0.99999994}
     - name: Shield
-      position: {x: -.578733742, y: .0215180349, z: .599889159}
-      rotation: {x: 3.72529074e-09, y: 2.73576006e-08, z: 1.07524493e-16, w: 1}
-      scale: {x: .898748636, y: .898748577, z: .898748636}
-      transformModified: 1
+      parentName: 
+      position: {x: -0.57873374, y: 0.021518035, z: 0.59988916}
+      rotation: {x: 0.0000000037252907, y: 0.0000000273576, z: 1.0752449e-16, w: 1}
+      scale: {x: 0.89874864, y: 0.8987486, z: 0.89874864}
     - name: Sword
-      position: {x: .776341856, y: -.552272499, z: .511011541}
-      rotation: {x: 3.14654873e-18, y: -1.10594556e-08, z: 1.86264515e-09, w: 1}
+      parentName: 
+      position: {x: 0.77634186, y: -0.5522725, z: 0.51101154}
+      rotation: {x: 3.1465487e-18, y: -0.000000011059456, z: 0.0000000018626451, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
