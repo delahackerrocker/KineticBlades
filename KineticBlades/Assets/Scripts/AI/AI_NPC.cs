@@ -29,9 +29,14 @@ public class AI_NPC : MonoBehaviour
 
     [HideInInspector] public Vector3 movementVector;
 
+    public bool killMe = false;
+
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+
+        SetRigidBodyState(true);
+        SetRigidColliderState(false);
 
         movementVector = Vector3.zero;
 
@@ -130,5 +135,57 @@ public class AI_NPC : MonoBehaviour
 
             targetAssigned = true;
         }
+    }
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Bullet")
+		{
+			Die();
+		}
+		else if (other.tag == "Sword")
+		{
+			Die();
+		}
+		else if (other.tag == "KineticBlade")
+		{
+			Die();
+		}
+	}
+
+	void Die()
+	{
+		GetComponent<Animator>().enabled = false;
+		GetComponent<NavMeshAgent>().enabled = false;
+
+		CancelInvoke();
+
+		SetRigidBodyState(false);
+		SetRigidColliderState(true);
+
+		Destroy(gameObject, 10f);
+	}
+
+    void SetRigidBodyState(bool state)
+    {
+        Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+
+        foreach (Rigidbody rigidbody in rigidbodies)
+        {
+            rigidbody.isKinematic = state;
+        }
+
+        //GetComponent<Rigidbody>().isKinematic = !state;
+    }
+    void SetRigidColliderState(bool state)
+    {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = state;
+        }
+
+        GetComponent<Collider>().enabled = !state;
     }
 }
