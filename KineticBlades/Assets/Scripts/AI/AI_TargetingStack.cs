@@ -19,10 +19,12 @@ public class AI_TargetingStack : MonoBehaviour
         if (target == null)
             target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        defensiveTargetClusters = new AI_TargetCluster[3];
+        defensiveTargetClusters = new AI_TargetCluster[5];
         defensiveTargetClusters[0] = outer;
         defensiveTargetClusters[1] = middle;
         defensiveTargetClusters[2] = outer;
+        defensiveTargetClusters[3] = inner;
+        defensiveTargetClusters[4] = outer;
     }
 
 
@@ -34,7 +36,7 @@ public class AI_TargetingStack : MonoBehaviour
 
     public AI_Target GetRandomTarget()
     {
-        int randomClusterID = Random.Range(0, 2);
+        int randomClusterID = Random.Range(0, defensiveTargetClusters.Length-1);
         AI_Target randomTarget = defensiveTargetClusters[randomClusterID].GetRandomTarget();
 
         return randomTarget;

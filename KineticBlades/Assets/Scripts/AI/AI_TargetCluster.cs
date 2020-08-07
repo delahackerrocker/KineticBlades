@@ -28,7 +28,7 @@ public class AI_TargetCluster : MonoBehaviour
         primaryTargets[0] = front;
         primaryTargets[1] = right;
         primaryTargets[2] = left;
-        primaryTargets[3] = front;
+        primaryTargets[3] = rear;
     }
 
     // Update is called once per frame

@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: OneHandShieldAttacks
+  m_Mask: 00000000010000000000000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: AnimModel
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Hip
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger0
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger0/LFinger01
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger0/LFinger01/LFinger02
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger1
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger1/LFinger11
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger1/LFinger11/LFinger12
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger2
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger2/LFinger21
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger2/LFinger21/LFinger22
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger3
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger3/LFinger31
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger3/LFinger31/LFinger32
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger4
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger4/LFinger41
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/LClavicle/LShoulder/LForearm/LHand/LFinger4/LFinger41/LFinger42
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/Neck
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger0
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger0/RFinger01
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger0/RFinger01/RFinger02
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger1
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger1/RFinger11
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger1/RFinger11/RFinger12
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger2
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger2/RFinger21
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger2/RFinger21/RFinger22
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger3
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger3/RFinger31
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger3/RFinger31/RFinger32
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger4
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger4/RFinger41
+    m_Weight: 1
+  - m_Path: Armature/Hip/LowerSpine/MiddleSpine/Chest/RClavicle/RShoulder/RForearm/RHand/RFinger4/RFinger41/RFinger42
+    m_Weight: 1
+  - m_Path: Armature/Hip/LThigh
+    m_Weight: 1
+  - m_Path: Armature/Hip/LThigh/LShin
+    m_Weight: 1
+  - m_Path: Armature/Hip/LThigh/LShin/LFoot
+    m_Weight: 1
+  - m_Path: Armature/Hip/LThigh/LShin/LFoot/LToe
+    m_Weight: 1
+  - m_Path: Armature/Hip/RThigh
+    m_Weight: 1
+  - m_Path: Armature/Hip/RThigh/RShin
+    m_Weight: 1
+  - m_Path: Armature/Hip/RThigh/RShin/RFoot
+    m_Weight: 1
+  - m_Path: Armature/Hip/RThigh/RShin/RFoot/RToe
+    m_Weight: 1
+  - m_Path: Shield
+    m_Weight: 1
+  - m_Path: Sword
+    m_Weight: 1

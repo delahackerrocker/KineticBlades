@@ -6,17 +6,28 @@ using UnityEngine.Animations;
 
 public class AI_NPC : MonoBehaviour
 {
+    // they AI get's targets around the real target from this
     public AI_TargetingStack aiTargetingStack;
+
     protected AI_Target aiTarget;
     protected Transform lookTarget;
 
     protected NavMeshAgent navMeshAgent;
     public Animator animator;
 
-    public bool lockOnToggle = true;
-    public bool targetAssigned = false;
+    protected int attackStateHash = Animator.StringToHash("Attack.Attack");
+    protected int attackVariation = 0;
 
-    public Vector3 movementVector;
+    protected bool shouldAttackNow = false;
+    protected int attackDesire = 0;
+    protected int desireThreshold = 60;
+    protected float decisionTimer = 1f;
+    protected float strikingDistance = 2f;
+
+    [HideInInspector] public bool lockOnToggle = true;
+    [HideInInspector] public bool targetAssigned = false;
+
+    [HideInInspector] public Vector3 movementVector;
 
     void Start()
     {
@@ -25,7 +36,7 @@ public class AI_NPC : MonoBehaviour
         movementVector = Vector3.zero;
 
         Invoke("AssignNewTarget", .1f);
-        InvokeRepeating("AssignNewTarget", 2f, 2f);
+        InvokeRepeating("AssignNewTarget", decisionTimer, decisionTimer);
     }
 
     private void OnApplicationQuit()
@@ -47,21 +58,77 @@ public class AI_NPC : MonoBehaviour
 
                 transform.rotation = rotation;
             }
-        }
 
-        Debug.Log("AI_NPC :: navMeshAgent.velocity:"+ navMeshAgent.velocity);
-        animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
-        animator.SetFloat("Strafe", movementVector.x);
+
+            animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
+            animator.SetFloat("Strafe", movementVector.x);
+
+            float distanceToEnemy = Vector3.Distance(lookTarget.position, transform.position);
+
+            if (distanceToEnemy < 3)
+            {
+                attackDesire++;
+
+                if (distanceToEnemy < strikingDistance)
+                {
+                    attackDesire++;
+
+                    if (attackDesire >= desireThreshold)
+                    {
+                        shouldAttackNow = true;
+                        attackDesire = Random.Range(0, desireThreshold);
+                    }
+
+                    if (shouldAttackNow)
+                    {
+                        Debug.Log("Attack");
+
+                        if (attackVariation == 0)
+                        {
+                            attackVariation = 1;
+                        }
+                        else if (attackVariation == 1)
+                        {
+                            attackVariation = 2;
+                        }
+                        else if (attackVariation == 2)
+                        {
+                            attackVariation = 3;
+                        }
+                        else if (attackVariation == 3)
+                        {
+                            attackVariation = 4;
+                        }
+                        else if (attackVariation == 4)
+                        {
+                            attackVariation = 1;
+                        }
+                        animator.SetInteger("AttackVariation", attackVariation);
+                        animator.SetTrigger("Attack");
+
+                        float newDefensiveness = Random.Range(0f, 2f);
+                        animator.SetFloat("Defensiveness", newDefensiveness);
+
+                        shouldAttackNow = false;
+                    }
+                }
+            }
+        }
     }
 
     protected void AssignNewTarget()
     {
-        if (lookTarget == null)
-            lookTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        int shouldStayOrGo = Random.Range(0, 10);
 
-        aiTarget = aiTargetingStack.GetRandomTarget();
-        navMeshAgent.destination = aiTarget.transform.position;
+        if (shouldStayOrGo > 2)
+        {
+            if (lookTarget == null)
+                lookTarget = GameObject.FindGameObjectWithTag("Player").transform;
 
-        targetAssigned = true;
+            aiTarget = aiTargetingStack.GetRandomTarget();
+            navMeshAgent.destination = aiTarget.transform.position;
+
+            targetAssigned = true;
+        }
     }
 }
