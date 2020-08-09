@@ -15,12 +15,15 @@ public class AI_NPC : MonoBehaviour
     protected NavMeshAgent navMeshAgent;
     public Animator animator;
 
+    public KineticBlade leftHandKineticBlade;
+    public KineticBlade rightHandKineticBlade;
+
     protected int attackStateHash = Animator.StringToHash("Attack.Attack");
     protected int attackVariation = 0;
 
     protected bool shouldAttackNow = false;
     protected int attackDesire = 0;
-    protected int desireThreshold = 40;
+    protected int desireThreshold = 10;
     protected float decisionTimer = 1f;
     protected float strikingDistance = 2f;
 
@@ -29,7 +32,7 @@ public class AI_NPC : MonoBehaviour
 
     [HideInInspector] public Vector3 movementVector;
 
-    public bool killMe = false;
+    [HideInInspector] public bool killMe = false;
 
     void Start()
     {
@@ -52,69 +55,83 @@ public class AI_NPC : MonoBehaviour
 
     void Update()
     {
-        if (targetAssigned)
+        if (killMe)
         {
-            if (lockOnToggle)
+            // I'm dead
+        }
+        else
+        {
+
+            if (targetAssigned)
             {
-                var direction = new Vector3(lookTarget.position.x, transform.position.y, lookTarget.position.z) - transform.position;
-                var rotation = Quaternion.LookRotation(direction);
+                if (lockOnToggle)
+                {
+                    var direction = new Vector3(lookTarget.position.x, transform.position.y, lookTarget.position.z) - transform.position;
+                    var rotation = Quaternion.LookRotation(direction);
 
-                //rotation.eulerAngles = new Vector3(Mathf.Clamp(rotation.eulerAngles.x, -30, 30), rotation.eulerAngles.y, rotation.eulerAngles.z);
+                    //rotation.eulerAngles = new Vector3(Mathf.Clamp(rotation.eulerAngles.x, -30, 30), rotation.eulerAngles.y, rotation.eulerAngles.z);
 
-                transform.rotation = rotation;
-            }
+                    transform.rotation = rotation;
+                }
 
 
-            animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
-            animator.SetFloat("Strafe", movementVector.x);
+                animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
+                animator.SetFloat("Strafe", movementVector.x);
 
-            float distanceToEnemy = Vector3.Distance(lookTarget.position, transform.position);
+                float distanceToEnemy = Vector3.Distance(lookTarget.position, transform.position);
 
-            if (distanceToEnemy < 4)
-            {
-                attackDesire++;
-
-                if (distanceToEnemy < strikingDistance)
+                if (distanceToEnemy < 4)
                 {
                     attackDesire++;
 
-                    if (attackDesire >= desireThreshold)
+                    if (distanceToEnemy < strikingDistance)
                     {
-                        shouldAttackNow = true;
-                        attackDesire = Random.Range(0, desireThreshold);
-                    }
+                        attackDesire++;
 
-                    if (shouldAttackNow)
-                    {
-                        Debug.Log("Attack");
+                        if (attackDesire >= desireThreshold)
+                        {
+                            shouldAttackNow = true;
+                            attackDesire = Random.Range(0, desireThreshold);
+                        }
 
-                        if (attackVariation == 0)
+                        if (shouldAttackNow)
                         {
-                            attackVariation = 1;
-                        }
-                        else if (attackVariation == 1)
-                        {
-                            attackVariation = 2;
-                        }
-                        else if (attackVariation == 2)
-                        {
-                            attackVariation = 3;
-                        }
-                        else if (attackVariation == 3)
-                        {
-                            attackVariation = 4;
-                        }
-                        else if (attackVariation == 4)
-                        {
-                            attackVariation = 1;
-                        }
-                        animator.SetInteger("AttackVariation", attackVariation);
-                        animator.SetTrigger("Attack");
+                            Debug.Log("Attack");
 
-                        float newDefensiveness = Random.Range(0f, 2f);
-                        animator.SetFloat("Defensiveness", newDefensiveness);
+                            /* step through each attack 1 by 1
+                            if (attackVariation == 0)
+                            {
+                                attackVariation = 1;
+                            }
+                            else if (attackVariation == 1)
+                            {
+                                attackVariation = 2;
+                            }
+                            else if (attackVariation == 2)
+                            {
+                                attackVariation = 3;
+                            }
+                            else if (attackVariation == 3)
+                            {
+                                attackVariation = 4;
+                            }
+                            else if (attackVariation == 4)
+                            {
+                                attackVariation = 1;
+                            }
+                            */
 
-                        shouldAttackNow = false;
+                            // random attack
+                            attackVariation = Random.Range(1, 4);
+
+                            animator.SetInteger("AttackVariation", attackVariation);
+                            animator.SetTrigger("Attack");
+
+                            float newDefensiveness = Random.Range(0f, 2f);
+                            animator.SetFloat("Defensiveness", newDefensiveness);
+
+                            shouldAttackNow = false;
+                        }
                     }
                 }
             }
@@ -149,22 +166,54 @@ public class AI_NPC : MonoBehaviour
 		}
 		else if (other.tag == "KineticBlade")
 		{
-			Die();
+            if (leftHandKineticBlade != null)
+            {
+                bool itsNotMine = false;
+
+                if (other.gameObject == leftHandKineticBlade.gameObject)
+                {
+                    // can't be hurt by your own blade
+                } else
+                {
+                    itsNotMine = true;
+                }
+
+                if (other.gameObject == rightHandKineticBlade.gameObject)
+                {
+                    // can't be hurt by your own blade
+                }
+                else
+                {
+                    itsNotMine = true;
+                }
+
+                if (itsNotMine) Die();
+            }
 		}
 	}
 
 	void Die()
 	{
-		GetComponent<Animator>().enabled = false;
-		GetComponent<NavMeshAgent>().enabled = false;
+        Debug.Log("DEATH to " + this.name);
+
+        killMe = true;
+
+        Destroy(this.GetComponent<Collider>());
+
+        animator.enabled = false;
+		navMeshAgent.enabled = false;
 
 		CancelInvoke();
 
 		SetRigidBodyState(false);
 		SetRigidColliderState(true);
 
-		Destroy(gameObject, 10f);
-	}
+        if (leftHandKineticBlade != null) leftHandKineticBlade.Disintegrate();
+        if (rightHandKineticBlade != null) rightHandKineticBlade.Disintegrate();
+
+        Destroy(gameObject, 10f);
+        Destroy(this);
+    }
 
     void SetRigidBodyState(bool state)
     {

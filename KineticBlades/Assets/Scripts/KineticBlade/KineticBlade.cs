@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class KineticBlade : HandItem
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Disintegrate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GetComponent<BladeRoot>().Disintegrate(0);
     }
 }
