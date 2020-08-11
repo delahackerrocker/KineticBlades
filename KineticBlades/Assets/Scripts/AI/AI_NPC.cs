@@ -194,6 +194,7 @@ public class AI_NPC : MonoBehaviour
 
 	void Die()
 	{
+        /*
         Debug.Log("DEATH to " + this.name);
 
         killMe = true;
@@ -213,6 +214,7 @@ public class AI_NPC : MonoBehaviour
 
         Destroy(gameObject, 10f);
         Destroy(this);
+        */
     }
 
     void SetRigidBodyState(bool state)
