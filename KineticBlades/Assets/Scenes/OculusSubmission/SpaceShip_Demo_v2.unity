@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 2a92971001a295e4d94a99733238a48f,
+  m_LightingDataAsset: {fileID: 112000000, guid: c92a27b1343cea04c8b757102896128a,
     type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -16980,9 +16980,9 @@ Transform:
   - {fileID: 1111925882}
   - {fileID: 579647276}
   - {fileID: 1089049108}
+  - {fileID: 1049462564}
   - {fileID: 1315762565}
   - {fileID: 387020355}
-  - {fileID: 1049462564}
   m_Father: {fileID: 557106208}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -38632,7 +38632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 454312771}
-  m_RootOrder: 86
+  m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1049462565
 Light:
@@ -43120,7 +43120,7 @@ Transform:
   m_Children:
   - {fileID: 461189747}
   m_Father: {fileID: 2038675557}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1174686329
 MeshRenderer:
@@ -74693,9 +74693,9 @@ Transform:
   - {fileID: 1742346270}
   - {fileID: 689846296}
   - {fileID: 14011417}
+  - {fileID: 1174686328}
   - {fileID: 124168}
   - {fileID: 423383244}
-  - {fileID: 1174686328}
   - {fileID: 1324400705}
   - {fileID: 1888755017}
   - {fileID: 172850836}
