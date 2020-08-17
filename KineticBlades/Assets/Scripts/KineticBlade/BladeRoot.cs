@@ -77,6 +77,7 @@ public class BladeRoot : MonoBehaviour
         TransferEnergy();
 
         // Reset the Movement Magnitude if they press OVRInput.Button.Two
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && !justBroke)
         {
             justBroke = true;
@@ -87,6 +88,7 @@ public class BladeRoot : MonoBehaviour
             justBroke = true;
             Disintegrate(0);
         }
+        */
     }
 
     public void TransferEnergy()
@@ -156,11 +158,11 @@ public class BladeRoot : MonoBehaviour
         }
         else
         {
-            Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
+            //Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
             if (targetIncrementID == -1)
             {
                 // not a valid targetIncrementID
-                Debug.LogWarning("incrementID == -1");
+                //Debug.LogWarning("incrementID == -1");
             }
             else
             {

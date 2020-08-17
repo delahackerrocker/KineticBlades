@@ -8,9 +8,12 @@ public class AI_NPC : MonoBehaviour
 {
     // they AI get's targets around the real target from this
     public AI_TargetingStack aiTargetingStack;
+    // this helper is part of how we track our actual heading vs direction
+    public AI_DirectionHelper aiDirectionHelper;
+
+    [HideInInspector] public Transform lookTarget;
 
     protected AI_Target aiTarget;
-    public Transform lookTarget;
 
     protected NavMeshAgent navMeshAgent;
     public Animator animator;
@@ -34,17 +37,25 @@ public class AI_NPC : MonoBehaviour
 
     [HideInInspector] public bool killMe = false;
 
+    protected int health = 10;
+
     void Start()
     {
+        aiTargetingStack = Instantiate(aiTargetingStack, this.transform.position, Quaternion.identity);
+        aiTargetingStack.aiNPC = this;
+
+        aiDirectionHelper.aiNPC = this;
+        aiDirectionHelper.aiTransform = this.transform;
+        aiDirectionHelper.animationTransform = animator.transform;
+
+        aiDirectionHelper = Instantiate(aiDirectionHelper, this.transform.position, Quaternion.identity);
+
         navMeshAgent = GetComponent<NavMeshAgent>();
 
         SetRigidBodyState(true);
         SetRigidColliderState(false);
 
         movementVector = Vector3.zero;
-
-        Invoke("AssignNewTarget", .1f);
-        InvokeRepeating("AssignNewTarget", decisionTimer, decisionTimer);
     }
 
     private void OnApplicationQuit()
@@ -98,30 +109,6 @@ public class AI_NPC : MonoBehaviour
                         {
                             Debug.Log("Attack");
 
-                            /* step through each attack 1 by 1
-                            if (attackVariation == 0)
-                            {
-                                attackVariation = 1;
-                            }
-                            else if (attackVariation == 1)
-                            {
-                                attackVariation = 2;
-                            }
-                            else if (attackVariation == 2)
-                            {
-                                attackVariation = 3;
-                            }
-                            else if (attackVariation == 3)
-                            {
-                                attackVariation = 4;
-                            }
-                            else if (attackVariation == 4)
-                            {
-                                attackVariation = 1;
-                            }
-                            */
-
-                            // random attack
                             attackVariation = Random.Range(1, 4);
 
                             animator.SetInteger("AttackVariation", attackVariation);
@@ -138,31 +125,32 @@ public class AI_NPC : MonoBehaviour
         }
     }
 
-    protected void AssignNewTarget()
+    public void NewTargetStackTarget()
     {
+        CancelInvoke();
+
         int shouldStayOrGo = Random.Range(0, 10);
 
         if (shouldStayOrGo > 2)
         {
-            if (lookTarget == null)
-                lookTarget = GameObject.FindGameObjectWithTag("Player").transform;
-
             aiTarget = aiTargetingStack.GetRandomTarget();
             navMeshAgent.destination = aiTarget.transform.position;
 
             targetAssigned = true;
         }
+
+        Invoke("NewTargetStackTarget", 1f);
     }
 
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Bullet")
 		{
-			Die();
+            Damage();
 		}
 		else if (other.tag == "Sword")
 		{
-			Die();
+            Damage();
 		}
 		else if (other.tag == "KineticBlade")
 		{
@@ -187,14 +175,22 @@ public class AI_NPC : MonoBehaviour
                     itsNotMine = true;
                 }
 
-                if (itsNotMine) Die();
+                if (itsNotMine) Damage();
             }
 		}
 	}
 
-	void Die()
+    void Damage()
+    {
+        health--;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
 	{
-        /*
         Debug.Log("DEATH to " + this.name);
 
         killMe = true;
@@ -214,7 +210,6 @@ public class AI_NPC : MonoBehaviour
 
         Destroy(gameObject, 10f);
         Destroy(this);
-        */
     }
 
     void SetRigidBodyState(bool state)
