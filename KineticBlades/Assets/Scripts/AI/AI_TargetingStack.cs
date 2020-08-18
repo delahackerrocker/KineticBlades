@@ -30,8 +30,11 @@ public class AI_TargetingStack : MonoBehaviour
 
     void Update()
     {
-        this.transform.position = new Vector3(target.transform.position.x, 0, target.transform.position.z);
-        this.transform.rotation = target.transform.rotation;
+        if (target != null)
+        { 
+            this.transform.position = new Vector3(target.transform.position.x, 0, target.transform.position.z);
+            this.transform.rotation = target.transform.rotation;
+        }
     }
 
     public AI_Target GetRandomTarget()

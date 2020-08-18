@@ -30,7 +30,13 @@ public class BladeRoot : MonoBehaviour
 
     public bool justBroke = false;
 
-    // Start is called before the first frame update
+    public bool iAmTeamOne = false;
+
+    public void SetTeam(bool isTeamOne)
+    {
+        iAmTeamOne = isTeamOne;
+    }
+
     void Start()
     {
         instance = this;
@@ -128,6 +134,7 @@ public class BladeRoot : MonoBehaviour
             currentBladeCylinder = bladeCylinders[increments].GetComponent<BladeCylinder>();
             currentBladeCylinder.myBladeRoot = this;
             currentBladeCylinder.incrementID = increments;
+            currentBladeCylinder.SetTeam(iAmTeamOne);
 
             justBroke = false;
 

@@ -21,6 +21,12 @@ public class BladeCylinder : MonoBehaviour
 
     public BladeCylinder nextCylinder = null;
 
+    public bool iAmTeamOne = false;
+
+    public void SetTeam(bool isTeamOne)
+    {
+        iAmTeamOne = isTeamOne;
+    }
     void Awake()
     {
         myBoxCollider = this.GetComponent<BoxCollider>();

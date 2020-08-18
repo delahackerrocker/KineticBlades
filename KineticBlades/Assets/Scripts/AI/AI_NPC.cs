@@ -6,10 +6,18 @@ using UnityEngine.Animations;
 
 public class AI_NPC : MonoBehaviour
 {
+    public AI_Team myTeam;
+
+    public bool iAmTeamOne = false;
+
     // they AI get's targets around the real target from this
     public AI_TargetingStack aiTargetingStack;
     // this helper is part of how we track our actual heading vs direction
-    public AI_DirectionHelper aiDirectionHelper;
+    protected AI_DirectionHelper aiDirectionHelper;
+
+    // these are the two prefabs we could use for aiDirectionHelper
+    public AI_DirectionHelper aiDirectionHelper_TeamOne;
+    public AI_DirectionHelper aiDirectionHelper_TeamTwo;
 
     [HideInInspector] public Transform lookTarget;
 
@@ -37,25 +45,39 @@ public class AI_NPC : MonoBehaviour
 
     [HideInInspector] public bool killMe = false;
 
-    protected int health = 10;
+    public int health = 100;
+    [HideInInspector] public int maxHealth = 100;
+
+    public GameObject[] skins;
 
     void Start()
     {
         aiTargetingStack = Instantiate(aiTargetingStack, this.transform.position, Quaternion.identity);
         aiTargetingStack.aiNPC = this;
 
+        if (myTeam.isTeamOne)
+        {
+            aiDirectionHelper = Instantiate(aiDirectionHelper_TeamOne, this.transform.position, Quaternion.identity);
+        } else
+        {
+            aiDirectionHelper = Instantiate(aiDirectionHelper_TeamTwo, this.transform.position, Quaternion.identity);
+        }
+
         aiDirectionHelper.aiNPC = this;
         aiDirectionHelper.aiTransform = this.transform;
         aiDirectionHelper.animationTransform = animator.transform;
 
-        aiDirectionHelper = Instantiate(aiDirectionHelper, this.transform.position, Quaternion.identity);
-
         navMeshAgent = GetComponent<NavMeshAgent>();
+
+        if (leftHandKineticBlade != null) leftHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
+        if (rightHandKineticBlade != null) rightHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
 
         SetRigidBodyState(true);
         SetRigidColliderState(false);
 
         movementVector = Vector3.zero;
+
+        ChangeSkin();
     }
 
     private void OnApplicationQuit()
@@ -63,28 +85,52 @@ public class AI_NPC : MonoBehaviour
         CancelInvoke();
     }
 
+    public void ChangeSkin()
+    {
+        for (int index = 0; index < skins.Length - 1; index++)
+        {
+            skins[index].SetActive(false);
+        }
+        skins[Random.Range(0,skins.Length-1)].SetActive(true);
+    }
 
     void Update()
     {
+        if (this.health <= 0) killMe = true;
+
         if (killMe)
         {
-            // I'm dead
+            Die();
         }
         else
         {
-
             if (targetAssigned)
             {
+                if (lookTarget.GetComponent<AI_NPC>() == null)
+                {
+                    // we need to get a new target
+                    myTeam.MyTargetDied(this);
+                }
+
+                float distanceToTarget = Vector3.Distance(lookTarget.position, transform.position);
+
+                // are we close enough to lock on the look?
+                if (distanceToTarget < 5)
+                {
+                    lockOnToggle = true;
+                } else
+                {
+                    lockOnToggle = false;
+                }
+
+                // if we are close enough...
                 if (lockOnToggle)
                 {
                     var direction = new Vector3(lookTarget.position.x, transform.position.y, lookTarget.position.z) - transform.position;
                     var rotation = Quaternion.LookRotation(direction);
 
-                    //rotation.eulerAngles = new Vector3(Mathf.Clamp(rotation.eulerAngles.x, -30, 30), rotation.eulerAngles.y, rotation.eulerAngles.z);
-
                     transform.rotation = rotation;
                 }
-
 
                 animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
                 animator.SetFloat("Strafe", movementVector.x);
@@ -144,20 +190,16 @@ public class AI_NPC : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Bullet")
+        bool itsNotMine = false;
+
+        if (other.tag == "Bullet")
 		{
-            Damage();
-		}
-		else if (other.tag == "Sword")
-		{
-            Damage();
-		}
+            if (itsNotMine) BulletDamage();
+        }
 		else if (other.tag == "KineticBlade")
 		{
             if (leftHandKineticBlade != null)
             {
-                bool itsNotMine = false;
-
                 if (other.gameObject == leftHandKineticBlade.gameObject)
                 {
                     // can't be hurt by your own blade
@@ -175,6 +217,15 @@ public class AI_NPC : MonoBehaviour
                     itsNotMine = true;
                 }
 
+                if (other.gameObject.GetComponent<BladeCylinder>().iAmTeamOne == iAmTeamOne)
+                {
+                    // can't be hurt by your own team
+                }
+                else
+                {
+                    itsNotMine = true;
+                }
+
                 if (itsNotMine) Damage();
             }
 		}
@@ -182,32 +233,32 @@ public class AI_NPC : MonoBehaviour
 
     void Damage()
     {
-        health--;
-        if (health <= 0)
-        {
-            //Die();
-        }
+        this.health = this.health - 1;
     }
 
+    void BulletDamage()
+    {
+        this.health = this.health - 10;
+    }
+    
     void Die()
 	{
         Debug.Log("DEATH to " + this.name);
 
-        killMe = true;
-
         Destroy(this.GetComponent<Collider>());
+        Destroy(aiDirectionHelper);
+        Destroy(aiTargetingStack);
 
         animator.enabled = false;
 		navMeshAgent.enabled = false;
 
-		CancelInvoke();
-
 		SetRigidBodyState(false);
 		SetRigidColliderState(true);
 
-        if (leftHandKineticBlade != null) leftHandKineticBlade.Disintegrate();
-        if (rightHandKineticBlade != null) rightHandKineticBlade.Disintegrate();
+        if (leftHandKineticBlade != null) Destroy(leftHandKineticBlade);
+        if (rightHandKineticBlade != null) Destroy(rightHandKineticBlade);
 
+        CancelInvoke();
         Destroy(gameObject, 10f);
         Destroy(this);
     }

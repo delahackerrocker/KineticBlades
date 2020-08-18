@@ -12,6 +12,8 @@ public class AI_DirectionHelper : MonoBehaviour
     public Vector3 currentPosition;
     public Vector3 movementVector;
 
+    public GameObject[] healthBars;
+
     void Start()
     {
         currentPosition = previousPosition = this.transform.position;
@@ -20,15 +22,38 @@ public class AI_DirectionHelper : MonoBehaviour
 
     void Update()
     {
-        this.transform.position = new Vector3(aiTransform.position.x, 0, aiTransform.position.z);
-        this.transform.rotation = animationTransform.rotation;
+        if (aiNPC == null)
+        {
+            Destroy(this.gameObject);
+        }
+        else 
+        {
+            this.transform.position = new Vector3(aiTransform.position.x, 0, aiTransform.position.z);
+            this.transform.rotation = animationTransform.rotation;
 
-        previousPosition = currentPosition;
-        currentPosition = this.transform.position;
+            previousPosition = currentPosition;
+            currentPosition = this.transform.position;
 
-        movementVector = currentPosition - previousPosition;
-        movementVector *= 100;
+            movementVector = currentPosition - previousPosition;
+            movementVector *= 100;
 
-        aiNPC.movementVector = movementVector;
+            aiNPC.movementVector = movementVector;
+
+            UpdateHealthBars();
+        }
+    }
+
+    void UpdateHealthBars()
+    {
+        for (int index = 0; index < healthBars.Length; index++)
+        {
+            healthBars[index].SetActive(false);
+        }
+
+        int healthBarsToShow = Mathf.RoundToInt(aiNPC.health / healthBars.Length);
+        for (int index = 0; index < healthBarsToShow; index++)
+        {
+            healthBars[index].SetActive(true);
+        }
     }
 }
