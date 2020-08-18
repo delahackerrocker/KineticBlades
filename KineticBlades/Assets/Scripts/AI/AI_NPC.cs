@@ -185,7 +185,7 @@ public class AI_NPC : MonoBehaviour
         health--;
         if (health <= 0)
         {
-            Die();
+            //Die();
         }
     }
 
