@@ -5,6 +5,8 @@ using UnityEngine.Events;
 using TMPro;
 public class ButtonPushClick : MonoBehaviour
 {
+    public bool isTeamLevel = false;
+
     public float MinLocalY = 0.25f;
     public float MaxLocalY = 0.55f;
   
@@ -26,8 +28,6 @@ public class ButtonPushClick : MonoBehaviour
         timeCountDownCanvas.SetActive(false);
 
     }
-
-  
 
     private void Update()
     {
@@ -82,7 +82,14 @@ public class ButtonPushClick : MonoBehaviour
 
         }
         //Load Scene
-        SceneLoader.instance.LoadScene("Cavern");
+
+        if (isTeamLevel)
+        {
+            SceneLoader.instance.LoadScene("TeamLevel_Demo");
+        } else
+        {
+            SceneLoader.instance.LoadScene("SpaceShip_Demo_v2");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
