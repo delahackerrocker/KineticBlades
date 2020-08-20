@@ -21,6 +21,8 @@ public class ButtonPushClick : MonoBehaviour
     public bool isBeingTouched = false;
     public bool isClicked = false;
 
+    public bool soundPlayed = false;
+
     public Material greenMat;
 
     public GameObject timeCountDownCanvas;
@@ -109,8 +111,14 @@ public class ButtonPushClick : MonoBehaviour
         if (isClicked)
         {
             ////Playing Sound
-            AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
-            AudioManager.instance.buttonClickSound.Play();
+
+            if (!soundPlayed)
+            {
+                AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
+                AudioManager.instance.buttonClickSound.Play();
+
+                soundPlayed = true;
+            }
 
             VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.LTouch);
             VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.RTouch);

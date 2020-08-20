@@ -50,9 +50,16 @@ public class AI_DirectionHelper : MonoBehaviour
             healthBars[index].SetActive(false);
         }
 
-        int healthBarsToShow = Mathf.RoundToInt(aiNPC.health / healthBars.Length);
-        for (int index = 0; index < healthBarsToShow; index++)
+        int ratio = Mathf.FloorToInt(aiNPC.maxHealthTwo / healthBars.Length);
+        int relativeHealth = Mathf.FloorToInt(aiNPC.healthTwo / ratio);
+        Debug.Log("---> [UpdateHealthBars] " + this.name);
+        Debug.Log("---> [UpdateHealthBars] :: health:" + aiNPC.healthTwo);
+        Debug.Log("---> [UpdateHealthBars] :: maxHealth:" + aiNPC.maxHealthTwo);
+        Debug.Log("---> [UpdateHealthBars] :: ratio:" + ratio);
+        Debug.Log("---> [UpdateHealthBars] :: relativeHealth:" + relativeHealth);
+        for (int index = 0; index < relativeHealth; index++)
         {
+            Debug.Log("---> [UpdateHealthBars] :: index:" + index);
             healthBars[index].SetActive(true);
         }
     }

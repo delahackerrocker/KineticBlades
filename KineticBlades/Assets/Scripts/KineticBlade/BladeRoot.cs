@@ -31,6 +31,7 @@ public class BladeRoot : MonoBehaviour
     public bool justBroke = false;
 
     public bool iAmTeamOne = false;
+    public bool iAmPlayer = false;
 
     public void SetTeam(bool isTeamOne)
     {
@@ -81,20 +82,6 @@ public class BladeRoot : MonoBehaviour
         if (absRotationChange > rotationChangeThreshold) rotationMagnitude += (absRotationChange * rotationMagnify);
 
         TransferEnergy();
-
-        // Reset the Movement Magnitude if they press OVRInput.Button.Two
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && !justBroke)
-        {
-            justBroke = true;
-            Disintegrate(0);
-        }
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch) && !justBroke)
-        {
-            justBroke = true;
-            Disintegrate(0);
-        }
-        */
     }
 
     public void TransferEnergy()
@@ -157,43 +144,20 @@ public class BladeRoot : MonoBehaviour
         movementMagnitude = 0;
     }
 
-    public void Disintegrate(int targetIncrementID)
+    public void Disintegrate()
     {
-        if (targetIncrementID > (increments - 1))
-        {
-            // an increment further down the chain fired after a lower chain link already began disintegrating
-        }
-        else
-        {
-            //Debug.Log(this.name + "Disintegrate(" + targetIncrementID + ")");
-            if (targetIncrementID == -1)
-            {
-                // not a valid targetIncrementID
-                //Debug.LogWarning("incrementID == -1");
-            }
-            else
-            {
+        if (bladeCylinders[1] != null) bladeCylinders[1].GetComponent<BladeCylinder>().Disintegrate();
+        currentBladeCylinder = bladeCylinders[0].GetComponent<BladeCylinder>();
 
-                if (targetIncrementID == 0)
-                {
-                    if (bladeCylinders[1] != null) bladeCylinders[1].GetComponent<BladeCylinder>().Disintegrate();
-                    currentBladeCylinder = bladeCylinders[0].GetComponent<BladeCylinder>();
+        currentBladeCylinder.transform.DetachChildren();
 
-                    currentBladeCylinder.transform.DetachChildren();
+        increments = 1;
 
-                    increments = 1;
-                }
-                else if (targetIncrementID >= 1)
-                {
-                    bladeCylinders[targetIncrementID].GetComponent<BladeCylinder>().Disintegrate();
-                    currentBladeCylinder = bladeCylinders[targetIncrementID - 1].GetComponent<BladeCylinder>();
-                }
-            }
+        parentTarget = currentBladeCylinder.transform;
 
-            parentTarget = currentBladeCylinder.transform;
+        movementMagnitude = 0;
+        rotationMagnitude = 0;
 
-            movementMagnitude = 0;
-            rotationMagnitude = 0;
-        }
+        if (iAmPlayer) AudioManager.instance.swordShatter.Play();
     }
 }

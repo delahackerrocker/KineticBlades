@@ -131,4 +131,4 @@ MonoBehaviour:
   energyIsFull: 0
   isDisintegrating: 0
   nextCylinder: {fileID: 0}
-  iAmTeamOne: 0
+  iAmTeamOne: 1

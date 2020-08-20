@@ -26,7 +26,6 @@ public class AI_NPC : MonoBehaviour
     protected NavMeshAgent navMeshAgent;
     public Animator animator;
 
-    public KineticBlade leftHandKineticBlade;
     public KineticBlade rightHandKineticBlade;
 
     protected int attackStateHash = Animator.StringToHash("Attack.Attack");
@@ -45,8 +44,10 @@ public class AI_NPC : MonoBehaviour
 
     [HideInInspector] public bool killMe = false;
 
-    public int health = 100;
-    [HideInInspector] public int maxHealth = 100;
+    [HideInInspector] protected int health = 250;
+    [HideInInspector] public int healthTwo = 250;
+    [HideInInspector] protected int maxHealth = 250;
+    [HideInInspector] public int maxHealthTwo = 250;
 
     public GameObject[] skins;
 
@@ -71,8 +72,7 @@ public class AI_NPC : MonoBehaviour
 
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        //if (leftHandKineticBlade != null) leftHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
-        //if (rightHandKineticBlade != null) rightHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
+        if (rightHandKineticBlade != null) rightHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
 
         SetRigidBodyState(true);
         SetRigidColliderState(false);
@@ -98,7 +98,7 @@ public class AI_NPC : MonoBehaviour
 
     void Update()
     {
-        if (this.health <= 0) killMe = true;
+        if (this.healthTwo <= 0) killMe = true;
 
         if (killMe)
         {
@@ -154,7 +154,7 @@ public class AI_NPC : MonoBehaviour
                 }
 
                 animator.SetFloat("Forward", Mathf.Abs(movementVector.z));
-                animator.SetFloat("Strafe", movementVector.x);
+                animator.SetFloat("Strafe", -movementVector.x);
 
                 float distanceToEnemy = Vector3.Distance(lookTarget.position, transform.position);
 
@@ -174,9 +174,9 @@ public class AI_NPC : MonoBehaviour
 
                         if (shouldAttackNow)
                         {
-                            Debug.Log("Attack");
+                            //Debug.Log("Attack");
 
-                            attackVariation = Random.Range(1, 6);
+                            attackVariation = Random.Range(1, 4);
 
                             animator.SetInteger("AttackVariation", attackVariation);
                             animator.SetTrigger("Attack");
@@ -195,12 +195,14 @@ public class AI_NPC : MonoBehaviour
     {
         CancelInvoke();
 
+        GetComponent<CapsuleCollider>().enabled = true;
+
         int shouldStayOrGo = Random.Range(0, 6);
 
         if (shouldStayOrGo > 2)
         {
             aiTarget = aiTargetingStack.GetRandomTarget();
-            if (aiTarget != null)
+            if (aiTarget != null && navMeshAgent != null && navMeshAgent.isActiveAndEnabled)
             {
                 navMeshAgent.destination = aiTarget.transform.position;
                 targetAssigned = true;
@@ -222,55 +224,19 @@ public class AI_NPC : MonoBehaviour
         }
 		else if (other.tag == "KineticBlade")
 		{
-            if (leftHandKineticBlade != null)
-            {
-                if (other.gameObject == leftHandKineticBlade.gameObject)
-                {
-                    // can't be hurt by your own blade
-                }
-                else
-                {
-                    itsNotMine = true;
-                }
-            }
-
-            if (rightHandKineticBlade != null)
-            {
-                if (other.gameObject == rightHandKineticBlade.gameObject)
-                {
-                    // can't be hurt by your own blade
-                }
-                else
-                {
-                    itsNotMine = true;
-                }
-            }
-
-            if (other.gameObject.GetComponent<BladeCylinder>().iAmTeamOne == iAmTeamOne)
-            {
-                // can't be hurt by your own team
-            }
-            else
-            {
-                itsNotMine = true;
-            }
-
-            if (itsNotMine)
-            {
-                myTeam.MyTargetDied(this);
-                Damage();
-            }
+            myTeam.MyTargetDied(this);
+            Damage();
 		}
 	}
 
     void Damage()
     {
-        this.health = this.health - 1;
+        this.healthTwo = this.healthTwo - 5;
     }
 
     void BulletDamage()
     {
-        this.health = this.health - 10;
+        this.healthTwo = this.healthTwo - 25;
     }
     
     void Die()
@@ -287,8 +253,11 @@ public class AI_NPC : MonoBehaviour
 		SetRigidBodyState(false);
 		SetRigidColliderState(true);
 
-        if (leftHandKineticBlade != null) Destroy(leftHandKineticBlade);
-        if (rightHandKineticBlade != null) Destroy(rightHandKineticBlade);
+        if (rightHandKineticBlade != null)
+        {
+            rightHandKineticBlade.Disintegrate();
+            Destroy(rightHandKineticBlade.gameObject);
+        }
 
         CancelInvoke();
         Destroy(gameObject, 10f);
@@ -304,7 +273,7 @@ public class AI_NPC : MonoBehaviour
             rigidbody.isKinematic = state;
         }
 
-        //GetComponent<Rigidbody>().isKinematic = !state;
+        GetComponent<Rigidbody>().isKinematic = !state;
     }
     void SetRigidColliderState(bool state)
     {

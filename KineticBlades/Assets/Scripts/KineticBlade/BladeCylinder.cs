@@ -75,12 +75,13 @@ public class BladeCylinder : MonoBehaviour
                 nextCylinder.Disintegrate();
             }
 
-            Invoke("DestroyMe", 3f);
+            Invoke("DestroyMe", .1f);
         }
     }
 
     protected void DestroyMe()
     {
+        CancelInvoke();
         Destroy(this.gameObject);
         Destroy(this);
     }
@@ -95,18 +96,15 @@ public class BladeCylinder : MonoBehaviour
         {
             if (other.tag == "KineticBlade")
             {
-                //myBladeRoot.Disintegrate(incrementID);
-                myBladeRoot.Disintegrate(0);
+                myBladeRoot.Disintegrate();
             }
             else if (other.tag == "Strikable")
             {
-                //myBladeRoot.Disintegrate(incrementID);
-                myBladeRoot.Disintegrate(0);
+                myBladeRoot.Disintegrate();
             }
             else if (other.tag == "NPCBlade")
             {
-                //myBladeRoot.Disintegrate(incrementID);
-                myBladeRoot.Disintegrate(0);
+                myBladeRoot.Disintegrate();
             }
         }
     }

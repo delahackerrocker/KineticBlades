@@ -20,11 +20,11 @@ public class AI_TargetingStack : MonoBehaviour
             target = GameObject.FindGameObjectWithTag("Player").transform;
 
         defensiveTargetClusters = new AI_TargetCluster[5];
-        defensiveTargetClusters[0] = outer;
+        defensiveTargetClusters[0] = inner;
         defensiveTargetClusters[1] = middle;
         defensiveTargetClusters[2] = outer;
         defensiveTargetClusters[3] = inner;
-        defensiveTargetClusters[4] = outer;
+        defensiveTargetClusters[4] = middle;
     }
 
 

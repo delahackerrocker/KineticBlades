@@ -2495,7 +2495,7 @@ Transform:
   m_GameObject: {fileID: 4688107152457567633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 74.89, y: 0.37, z: -47.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
   m_Children:
   - {fileID: 4763844643967537814}
   m_Father: {fileID: 0}
@@ -2524,14 +2524,13 @@ MonoBehaviour:
   lookTarget: {fileID: 1062072971921951546, guid: 64d679fa549d295419b49d4979c7e17c,
     type: 3}
   animator: {fileID: 8516995557796448793}
-  leftHandKineticBlade: {fileID: 0}
   rightHandKineticBlade: {fileID: 4142321007771367528}
   lockOnToggle: 1
   targetAssigned: 0
   movementVector: {x: 0, y: 0, z: 0}
   killMe: 0
-  health: 100
-  maxHealth: 10
+  healthTwo: 250
+  maxHealthTwo: 250
   skins:
   - {fileID: 2173049823324395964}
   - {fileID: 1044245891757173424}

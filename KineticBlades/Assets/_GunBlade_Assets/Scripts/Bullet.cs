@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
 
     //bullet speed
-    public float speed = 10.5f;
+    public float speed = 9.5f;
     //rigidbody of the bullet
 
     Rigidbody rb;

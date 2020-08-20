@@ -12,6 +12,10 @@ public class KineticBlade : HandItem
     }
     public void Disintegrate()
     {
-        //GetComponent<BladeRoot>().Disintegrate(0);
+        if (GetComponent<BladeRoot>() != null)
+        {
+            GetComponent<BladeRoot>().Disintegrate();
+        }
+        Destroy(this.gameObject);
     }
 }

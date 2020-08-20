@@ -67,7 +67,7 @@ public class AI_Team : MonoBehaviour
         if (isTeamOne)
         {
             int randomTarget = Random.Range(0, aiOpposingTeam.maxNPCs - 1);
-            if (aiEnemyNPCs[randomTarget] == null)
+            if (aiEnemyNPCs[randomTarget] != null)
             {
                 needsNewTarget.lookTarget = aiEnemyNPCs[randomTarget].transform;
                 needsNewTarget.aiTargetingStack.target = aiEnemyNPCs[randomTarget].transform;
