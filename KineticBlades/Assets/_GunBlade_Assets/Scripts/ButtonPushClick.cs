@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
+
+public enum LevelToLoad
+{
+    MainMenu,
+    MissionDemo,
+    TeamArenaDemo
+}
+
 public class ButtonPushClick : MonoBehaviour
 {
-    public bool isTeamLevel = false;
+    public LevelToLoad levelToLoad = LevelToLoad.MainMenu;
 
     public float MinLocalY = 0.25f;
     public float MaxLocalY = 0.55f;
@@ -83,10 +91,14 @@ public class ButtonPushClick : MonoBehaviour
         }
         //Load Scene
 
-        if (isTeamLevel)
+        if (levelToLoad == LevelToLoad.MainMenu)
+        {
+            SceneLoader.instance.LoadScene("MainMenu");
+        } else if (levelToLoad == LevelToLoad.TeamArenaDemo)
         {
             SceneLoader.instance.LoadScene("TeamLevel_Demo");
-        } else
+        }
+        else if (levelToLoad == LevelToLoad.MissionDemo)
         {
             SceneLoader.instance.LoadScene("SpaceShip_Demo_v2");
         }

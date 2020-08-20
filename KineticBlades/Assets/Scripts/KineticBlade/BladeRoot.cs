@@ -22,9 +22,9 @@ public class BladeRoot : MonoBehaviour
     public float rotationMagnitude = 0;
 
     protected float movementChangeThreshold = .01f;
-    protected float movementMagnify = .25f;
+    protected float movementMagnify = .15f;
     protected float rotationChangeThreshold = .01f;
-    protected float rotationMagnify = 3.5f;
+    protected float rotationMagnify = 2.5f;
 
     public bool testDisintegration = false;
 

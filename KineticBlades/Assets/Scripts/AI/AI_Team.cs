@@ -17,7 +17,7 @@ public class AI_Team : MonoBehaviour
 
     protected AI_NPC[] aiNPCs;
     protected int npcIndex = 0;
-    protected int maxNPCs = 5;
+    public int maxNPCs = 5;
 
     protected AI_NPC[] aiEnemyNPCs;
 
@@ -50,7 +50,7 @@ public class AI_Team : MonoBehaviour
     {
         for (var index = 0; index < maxNPCs; index++)
         {
-            AssignTarget(index, index);
+            AssignTarget(index, Random.Range(0, aiOpposingTeam.maxNPCs));
         }
     }
 
@@ -58,66 +58,30 @@ public class AI_Team : MonoBehaviour
     {
         aiNPCs[currentNPC].lookTarget = aiEnemyNPCs[currentTarget].transform;
         aiNPCs[currentNPC].aiTargetingStack.target = aiEnemyNPCs[currentTarget].transform;
-        aiNPCs[currentNPC].NewTargetStackTarget();
+
+        if (isTeamOne) aiNPCs[currentNPC].NewTargetStackTarget();
     }
 
     public void MyTargetDied(AI_NPC needsNewTarget)
     {
-        int shouldITargetPlayer = Random.Range(0, 1);
-        if (shouldITargetPlayer == 0)
+        if (isTeamOne)
         {
-
-            int newTarget = -1;
-
-            for (int index = 0; index < maxNPCs; index++)
+            int randomTarget = Random.Range(0, aiOpposingTeam.maxNPCs - 1);
+            if (aiEnemyNPCs[randomTarget] == null)
             {
-                if (aiEnemyNPCs[index] == null)
-                {
-                    // this guy is dead
-                }
-                else
-                {
-                    newTarget = index;
-                }
-            }
-
-            if (newTarget == -1)
-            {
-                if (isTeamOne)
-                {
-                    // the players team has won
-                }
-                else
-                {
-                    // target the player now because no AI targets left
-                    GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
-
-                    needsNewTarget.lookTarget = thePlayer.transform;
-                    needsNewTarget.aiTargetingStack.target = thePlayer.transform;
-                    needsNewTarget.NewTargetStackTarget();
-                }
-            }
-            else
-            {
-                needsNewTarget.lookTarget = aiEnemyNPCs[newTarget].transform;
-                needsNewTarget.aiTargetingStack.target = aiEnemyNPCs[newTarget].transform;
+                needsNewTarget.lookTarget = aiEnemyNPCs[randomTarget].transform;
+                needsNewTarget.aiTargetingStack.target = aiEnemyNPCs[randomTarget].transform;
                 needsNewTarget.NewTargetStackTarget();
             }
-        } else
+        }
+        else
         {
-            if (isTeamOne)
-            {
-                // this character is team one
-            }
-            else
-            {
-                // we're going to taret the player
-                GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
+            // we're going to taret the player
+            GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
 
-                needsNewTarget.lookTarget = thePlayer.transform;
-                needsNewTarget.aiTargetingStack.target = thePlayer.transform;
-                needsNewTarget.NewTargetStackTarget();
-            }
+            needsNewTarget.lookTarget = thePlayer.transform;
+            needsNewTarget.aiTargetingStack.target = thePlayer.transform;
+            needsNewTarget.NewTargetStackTarget();
         }
     }
 

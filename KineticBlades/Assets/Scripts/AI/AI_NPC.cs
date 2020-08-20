@@ -50,6 +50,8 @@ public class AI_NPC : MonoBehaviour
 
     public GameObject[] skins;
 
+    protected bool engagingTarget = false;
+
     void Start()
     {
         aiTargetingStack = Instantiate(aiTargetingStack, this.transform.position, Quaternion.identity);
@@ -69,8 +71,8 @@ public class AI_NPC : MonoBehaviour
 
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        if (leftHandKineticBlade != null) leftHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
-        if (rightHandKineticBlade != null) rightHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
+        //if (leftHandKineticBlade != null) leftHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
+        //if (rightHandKineticBlade != null) rightHandKineticBlade.GetComponent<KineticBlade>().iAmTeamOne = iAmTeamOne;
 
         SetRigidBodyState(true);
         SetRigidColliderState(false);
@@ -104,6 +106,21 @@ public class AI_NPC : MonoBehaviour
         }
         else
         {
+            
+            if (engagingTarget == false)
+            {
+                if (lookTarget != null)
+                {
+                    float distanceToStartTargeting = Vector3.Distance(lookTarget.position, transform.position);
+                    if (distanceToStartTargeting < 10)
+                    {
+                        NewTargetStackTarget();
+                    }
+                } else
+                {
+                    myTeam.MyTargetDied(this);
+                }
+            }
             if (targetAssigned)
             {
                 if (lookTarget.GetComponent<AI_NPC>() == null)
@@ -115,8 +132,12 @@ public class AI_NPC : MonoBehaviour
                 float distanceToTarget = Vector3.Distance(lookTarget.position, transform.position);
 
                 // are we close enough to lock on the look?
-                if (distanceToTarget < 5)
+                if (distanceToTarget < 10)
                 {
+                    if (engagingTarget == false)
+                    {
+                        NewTargetStackTarget();
+                    }
                     lockOnToggle = true;
                 } else
                 {
@@ -155,13 +176,12 @@ public class AI_NPC : MonoBehaviour
                         {
                             Debug.Log("Attack");
 
-                            attackVariation = Random.Range(1, 4);
+                            attackVariation = Random.Range(1, 6);
 
                             animator.SetInteger("AttackVariation", attackVariation);
                             animator.SetTrigger("Attack");
 
-                            float newDefensiveness = Random.Range(0f, 2f);
-                            animator.SetFloat("Defensiveness", newDefensiveness);
+                            animator.SetFloat("Defensiveness", 2f);
 
                             shouldAttackNow = false;
                         }
@@ -175,14 +195,17 @@ public class AI_NPC : MonoBehaviour
     {
         CancelInvoke();
 
-        int shouldStayOrGo = Random.Range(0, 10);
+        int shouldStayOrGo = Random.Range(0, 6);
 
         if (shouldStayOrGo > 2)
         {
             aiTarget = aiTargetingStack.GetRandomTarget();
-            navMeshAgent.destination = aiTarget.transform.position;
-
-            targetAssigned = true;
+            if (aiTarget != null)
+            {
+                navMeshAgent.destination = aiTarget.transform.position;
+                targetAssigned = true;
+                engagingTarget = true;
+            }
         }
 
         Invoke("NewTargetStackTarget", 1f);
@@ -194,7 +217,8 @@ public class AI_NPC : MonoBehaviour
 
         if (other.tag == "Bullet")
 		{
-            if (itsNotMine) BulletDamage();
+            myTeam.MyTargetDied(this);
+            BulletDamage();
         }
 		else if (other.tag == "KineticBlade")
 		{
@@ -203,11 +227,15 @@ public class AI_NPC : MonoBehaviour
                 if (other.gameObject == leftHandKineticBlade.gameObject)
                 {
                     // can't be hurt by your own blade
-                } else
+                }
+                else
                 {
                     itsNotMine = true;
                 }
+            }
 
+            if (rightHandKineticBlade != null)
+            {
                 if (other.gameObject == rightHandKineticBlade.gameObject)
                 {
                     // can't be hurt by your own blade
@@ -216,17 +244,21 @@ public class AI_NPC : MonoBehaviour
                 {
                     itsNotMine = true;
                 }
+            }
 
-                if (other.gameObject.GetComponent<BladeCylinder>().iAmTeamOne == iAmTeamOne)
-                {
-                    // can't be hurt by your own team
-                }
-                else
-                {
-                    itsNotMine = true;
-                }
+            if (other.gameObject.GetComponent<BladeCylinder>().iAmTeamOne == iAmTeamOne)
+            {
+                // can't be hurt by your own team
+            }
+            else
+            {
+                itsNotMine = true;
+            }
 
-                if (itsNotMine) Damage();
+            if (itsNotMine)
+            {
+                myTeam.MyTargetDied(this);
+                Damage();
             }
 		}
 	}

@@ -13,19 +13,20 @@ public class SceneLoader : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(instance);
             return;
         }
 
         instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         overlay_Background.enabled = false;
         overlay_LoadingText.enabled = false;
     }
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(ShowOverlayAndLoad(sceneName));
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(sceneName);
+        //StartCoroutine(ShowOverlayAndLoad(sceneName));
     }
 
     IEnumerator ShowOverlayAndLoad(string sceneName)
