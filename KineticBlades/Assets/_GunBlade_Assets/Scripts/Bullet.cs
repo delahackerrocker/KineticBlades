@@ -8,22 +8,25 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
 
     //bullet speed
-    public float speed = 9.5f;
+    protected float speed = 10f;
     //rigidbody of the bullet
 
     Rigidbody rb;
    
     void Start()
     {
-        //initialize the variables
         rb = transform.GetComponent<Rigidbody>();
-      
-        //move the bullet
-        rb.velocity = transform.forward * speed;  
+        rb.velocity = transform.forward * speed;
+
+        BabyIWasBornToDie();
     }
 
-  
-   
+    protected float secondsTillDestruction = 10f;
+    void BabyIWasBornToDie()
+    {
+        Destroy(gameObject, secondsTillDestruction);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);

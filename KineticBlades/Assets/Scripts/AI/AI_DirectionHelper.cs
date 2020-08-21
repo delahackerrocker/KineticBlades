@@ -17,6 +17,7 @@ public class AI_DirectionHelper : MonoBehaviour
     void Start()
     {
         currentPosition = previousPosition = this.transform.position;
+        previousRelativeHealth = aiNPC.maxHealthTwo;
     }
 
 
@@ -43,24 +44,31 @@ public class AI_DirectionHelper : MonoBehaviour
         }
     }
 
+    public Material healthBarGood;
+    public Material healthBarBad;
+    protected int previousRelativeHealth;
     void UpdateHealthBars()
     {
-        for (int index = 0; index < healthBars.Length; index++)
-        {
-            healthBars[index].SetActive(false);
-        }
-
         int ratio = Mathf.FloorToInt(aiNPC.maxHealthTwo / healthBars.Length);
         int relativeHealth = Mathf.FloorToInt(aiNPC.healthTwo / ratio);
-        Debug.Log("---> [UpdateHealthBars] " + this.name);
-        Debug.Log("---> [UpdateHealthBars] :: health:" + aiNPC.healthTwo);
-        Debug.Log("---> [UpdateHealthBars] :: maxHealth:" + aiNPC.maxHealthTwo);
-        Debug.Log("---> [UpdateHealthBars] :: ratio:" + ratio);
-        Debug.Log("---> [UpdateHealthBars] :: relativeHealth:" + relativeHealth);
-        for (int index = 0; index < relativeHealth; index++)
+
+        if (previousRelativeHealth == relativeHealth)
         {
-            Debug.Log("---> [UpdateHealthBars] :: index:" + index);
-            healthBars[index].SetActive(true);
+            // Do Nothing
+        }
+        else
+        {
+            for (int index = 0; index < healthBars.Length; index++)
+            {
+                healthBars[index].GetComponent<MeshRenderer>().material = healthBarBad;
+            }
+
+            for (int index = 0; index < relativeHealth; index++)
+            {
+                healthBars[index].GetComponent<MeshRenderer>().material = healthBarGood;
+            }
+
+            previousRelativeHealth = relativeHealth;
         }
     }
 }

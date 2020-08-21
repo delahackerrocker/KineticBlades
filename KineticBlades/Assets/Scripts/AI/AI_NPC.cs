@@ -81,11 +81,8 @@ public class AI_NPC : MonoBehaviour
 
         ChangeSkin();
     }
-
-    private void OnApplicationQuit()
-    {
-        CancelInvoke();
-    }
+    private void OnApplicationQuit() { CancelInvoke(); }
+    private void OnDestroy() { CancelInvoke(); }
 
     public void ChangeSkin()
     {
@@ -215,8 +212,6 @@ public class AI_NPC : MonoBehaviour
 
 	void OnTriggerEnter(Collider other)
 	{
-        bool itsNotMine = false;
-
         if (other.tag == "Bullet")
 		{
             myTeam.MyTargetDied(this);
@@ -231,18 +226,16 @@ public class AI_NPC : MonoBehaviour
 
     void Damage()
     {
-        this.healthTwo = this.healthTwo - 5;
+        this.healthTwo = this.healthTwo - 2;
     }
 
     void BulletDamage()
     {
-        this.healthTwo = this.healthTwo - 25;
+        this.healthTwo = this.healthTwo - 35;
     }
     
     void Die()
 	{
-        Debug.Log("DEATH to " + this.name);
-
         Destroy(this.GetComponent<Collider>());
         Destroy(aiDirectionHelper);
         Destroy(aiTargetingStack);

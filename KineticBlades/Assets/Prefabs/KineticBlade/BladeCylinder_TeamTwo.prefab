@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7795470029663736931}
   - component: {fileID: 7795470029663736928}
   - component: {fileID: 4388183020583347390}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BladeCylinder_TeamTwo
   m_TagString: KineticBlade
   m_Icon: {fileID: 0}

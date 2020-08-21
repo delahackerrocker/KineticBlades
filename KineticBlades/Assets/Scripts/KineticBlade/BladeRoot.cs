@@ -21,10 +21,10 @@ public class BladeRoot : MonoBehaviour
     public float movementMagnitude = 0;
     public float rotationMagnitude = 0;
 
-    protected float movementChangeThreshold = .01f;
-    protected float movementMagnify = .15f;
-    protected float rotationChangeThreshold = .01f;
-    protected float rotationMagnify = 2.5f;
+    protected float movementChangeThreshold = .05f;
+    protected float movementMagnify = .05f;
+    protected float rotationChangeThreshold = .05f;
+    protected float rotationMagnify = .1f;
 
     public bool testDisintegration = false;
 
@@ -64,6 +64,7 @@ public class BladeRoot : MonoBehaviour
 
         movementMagnitude = 0;
         rotationMagnitude = 0;
+
         CreateBladeCylinder();
     }
 
