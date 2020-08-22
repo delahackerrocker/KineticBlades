@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerEvent: 0
-  audioID: KINETIC_FANATICISM_V1
+  audioID: Kickin2
   soundType: 1
   position: 1
   volume: 1
@@ -6447,6 +6447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4655873951286106694, guid: 64d679fa549d295419b49d4979c7e17c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4821927777641046578, guid: 64d679fa549d295419b49d4979c7e17c,
         type: 3}
