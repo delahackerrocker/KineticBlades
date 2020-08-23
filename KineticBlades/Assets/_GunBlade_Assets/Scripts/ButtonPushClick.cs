@@ -29,11 +29,13 @@ public class ButtonPushClick : MonoBehaviour
     public TextMeshProUGUI timeText;
 
     public float smooth = 0.1f;
-    // Start is called before the first frame update
+
+    protected Vector3 defaultPosition;
+
     void Start()
     {
         // Start with button up top / popped up
-        transform.localPosition = new Vector3(transform.localPosition.x, MaxLocalY, transform.localPosition.z);
+        defaultPosition = transform.localPosition = new Vector3(transform.localPosition.x, MaxLocalY, transform.localPosition.z);
 
         timeCountDownCanvas.SetActive(false);
 
@@ -117,11 +119,12 @@ public class ButtonPushClick : MonoBehaviour
                 AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
                 AudioManager.instance.buttonClickSound.Play();
 
+                VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.LTouch);
+                VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.RTouch);
+
                 soundPlayed = true;
             }
 
-            VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.LTouch);
-            VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.RTouch);
         }
     }
 
@@ -139,7 +142,7 @@ public class ButtonPushClick : MonoBehaviour
         if (collision.collider.gameObject.tag != "BackButton")
         {
             isBeingTouched = false;
-
+            transform.localPosition = defaultPosition;
         }
     }
 }
