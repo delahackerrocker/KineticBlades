@@ -32,6 +32,8 @@ public class ButtonPushClick : MonoBehaviour
 
     protected Vector3 defaultPosition;
 
+    public bool nowTesting = false;
+
     void Start()
     {
         // Start with button up top / popped up
@@ -73,8 +75,14 @@ public class ButtonPushClick : MonoBehaviour
         AudioManager.instance.buttonClickSound.Play();
 
         //Start the game
-        StartCoroutine(StartGame(3));
-      
+        if (nowTesting)
+        {
+            // DO NOTHING
+        }
+        else
+        {
+            StartCoroutine(StartGame(3));
+        }
     }
 
 

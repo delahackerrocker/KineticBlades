@@ -13,7 +13,7 @@ public class BladeCylinder : MonoBehaviour
     protected Vector3 basePosition = new Vector3(0, 2.3f, 0f);
 
     public float energyPool = 0;
-    protected float energyMax = .5f;
+    protected float energyMax = .45f;
 
     public bool energyIsFull = false;
 
