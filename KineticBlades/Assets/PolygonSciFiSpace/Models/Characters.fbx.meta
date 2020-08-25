@@ -549,12 +549,102 @@ ModelImporter:
   - first:
       137: 13700038
     second: SM_Chr_SpaceSoldier_Male_01
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color18
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color19
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color20
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color26
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color27
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color28
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color29
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color30
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color31
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color32
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color33
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color34
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color35
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color36
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color37
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color38
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _Color
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert39
+    second: {fileID: 2100000, guid: 2e317f156e288ef4595ccb08d14367fc, type: 2}
   materials:
-    materialImportMode: 0
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -591,7 +681,7 @@ ModelImporter:
     importLights: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 0
