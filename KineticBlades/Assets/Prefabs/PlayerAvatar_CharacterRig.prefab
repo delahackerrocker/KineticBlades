@@ -116,7 +116,7 @@ MonoBehaviour:
       swivelOffset: 0
       wristToPalmAxis: {x: -1, y: -0, z: -0}
       palmToThumbAxis: {x: 0, y: 0, z: 1}
-      armLengthMlp: 0.66
+      armLengthMlp: 0.9
       stretchCurve:
         serializedVersion: 2
         m_Curve: []
@@ -136,7 +136,7 @@ MonoBehaviour:
       swivelOffset: 0
       wristToPalmAxis: {x: 1, y: 0, z: 0}
       palmToThumbAxis: {x: -0, y: -0, z: -1}
-      armLengthMlp: 0.66
+      armLengthMlp: 0.9
       stretchCurve:
         serializedVersion: 2
         m_Curve: []
@@ -3906,11 +3906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1922622757042502614}
     m_Modifications:
-    - target: {fileID: 570513256396503498, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2183033082003206500, guid: 88c78da9300d51140a8508bc43f2636e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3966,43 +3961,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 6.597
       objectReference: {fileID: 0}
-    - target: {fileID: 2183033082003206500, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03614647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2183033082003206500, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03614647
-      objectReference: {fileID: 0}
-    - target: {fileID: 2183033082003206500, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.03614647
-      objectReference: {fileID: 0}
     - target: {fileID: 2887063399012549495, guid: 88c78da9300d51140a8508bc43f2636e,
         type: 3}
       propertyPath: m_Name
       value: ArmCannon
       objectReference: {fileID: 0}
-    - target: {fileID: 3196537490806739891, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367633579866577260, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226442776069676681, guid: 88c78da9300d51140a8508bc43f2636e,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8226442776991717683, guid: 88c78da9300d51140a8508bc43f2636e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c78da9300d51140a8508bc43f2636e, type: 3}
 --- !u!4 &5955102411725610662 stripped
 Transform:

@@ -12,6 +12,7 @@ public class HandInventory : MonoBehaviour
 
     void Start()
     {
+        TurnOffAllItems();
         TurnOnItem(selected);
     }
 

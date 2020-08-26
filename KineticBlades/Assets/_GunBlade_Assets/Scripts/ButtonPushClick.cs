@@ -8,7 +8,9 @@ public enum LevelToLoad
 {
     MainMenu,
     MissionDemo,
-    TeamArenaDemo
+    TeamArenaDemo,
+    StarFighter_01,
+    StarFighter_02
 }
 
 public class ButtonPushClick : MonoBehaviour
@@ -106,13 +108,22 @@ public class ButtonPushClick : MonoBehaviour
         if (levelToLoad == LevelToLoad.MainMenu)
         {
             SceneLoader.instance.LoadScene("MainMenu");
-        } else if (levelToLoad == LevelToLoad.TeamArenaDemo)
+        }
+        else if (levelToLoad == LevelToLoad.TeamArenaDemo)
         {
             SceneLoader.instance.LoadScene("TeamLevel_Demo");
         }
         else if (levelToLoad == LevelToLoad.MissionDemo)
         {
             SceneLoader.instance.LoadScene("SpaceShip_Demo_v2");
+        }
+        else if (levelToLoad == LevelToLoad.StarFighter_01)
+        {
+            SceneLoader.instance.LoadScene("StarFighter_Demo_01");
+        }
+        else if (levelToLoad == LevelToLoad.StarFighter_02)
+        {
+            SceneLoader.instance.LoadScene("StarFighter_Demo_02");
         }
     }
 
