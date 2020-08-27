@@ -12,6 +12,9 @@ public class XR_Joystick : MonoBehaviour
     protected float maxGrabberDrag = 4f;
     protected float maxRotationAngle = 40f;
 
+    public float totalChangeRotationX = 0;
+    public float totalChangeRotationZ = 0;
+
     void Start()
     {
 
@@ -23,7 +26,7 @@ public class XR_Joystick : MonoBehaviour
         Vector3 newRotation = new Vector3(0f, 0f, 0f);
         float grabbableZ = grabber.transform.localPosition.z;
         float rotationRatioX = maxRotationAngle / maxGrabberDrag;
-        float totalChangeRotationX = 0;
+        
         if (grabbableZ > 0f)
         {
             if (grabbableZ > maxGrabberDrag) grabbableZ = maxGrabberDrag;
@@ -37,7 +40,7 @@ public class XR_Joystick : MonoBehaviour
 
         float grabbableX = grabber.transform.localPosition.x;
         float rotationRatioZ = maxRotationAngle / maxGrabberDrag;
-        float totalChangeRotationZ = 0;
+        
         if (grabbableX > 0f)
         {
             if (grabbableX > maxGrabberDrag) grabbableX = maxGrabberDrag;
