@@ -2406,7 +2406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922788621870732732}
   - component: {fileID: 1965373788851148508}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: SM_Chr_SpaceSoldier_Head_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2618,7 +2618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1922517683751437666}
   - component: {fileID: 1966228217418550350}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: SM_Chr_SpaceSoldier_Head_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -50,9 +50,7 @@ public class ArmCannon : MonoBehaviour
     {
         if (ammo > 0)
         {
-            //Play sound
-            AudioManager.instance.gunSound.gameObject.transform.position = nozzleTransform.position;
-            AudioManager.instance.gunSound.Play();
+            AudioController.Play("gunSound", nozzleTransform, 1);
 
             //Shake Left Controller
             VibrationManager.instance.VibrateController(.05f, .3f, .3f, OVRInput.Controller.LTouch);

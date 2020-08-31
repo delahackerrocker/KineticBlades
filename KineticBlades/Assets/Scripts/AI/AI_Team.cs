@@ -15,11 +15,11 @@ public class AI_Team : MonoBehaviour
 
     public GameObject[] spawnPoints;
 
-    protected AI_NPC[] aiNPCs;
+    protected iAI_NPC[] aiNPCs;
     protected int npcIndex = 0;
     public int maxNPCs = 5;
 
-    protected AI_NPC[] aiEnemyNPCs;
+    protected iAI_NPC[] aiEnemyNPCs;
 
     void Start()
     {
@@ -57,12 +57,12 @@ public class AI_Team : MonoBehaviour
     public void AssignTarget(int currentNPC, int currentTarget )
     {
         aiNPCs[currentNPC].lookTarget = aiEnemyNPCs[currentTarget].transform;
-        aiNPCs[currentNPC].aiTargetingStack.target = aiEnemyNPCs[currentTarget].transform;
+        aiNPCs[currentNPC].aiTargetingStack.GetComponent<AI_TargetingStack>().target = aiEnemyNPCs[currentTarget].transform;
 
         if (isTeamOne) aiNPCs[currentNPC].NewTargetStackTarget();
     }
 
-    public void MyTargetDied(AI_NPC needsNewTarget)
+    public void MyTargetDied(iAI_NPC needsNewTarget)
     {
         if (isTeamOne)
         {
@@ -70,7 +70,7 @@ public class AI_Team : MonoBehaviour
             if (aiEnemyNPCs[randomTarget] != null)
             {
                 needsNewTarget.lookTarget = aiEnemyNPCs[randomTarget].transform;
-                needsNewTarget.aiTargetingStack.target = aiEnemyNPCs[randomTarget].transform;
+                needsNewTarget.aiTargetingStack.GetComponent<AI_TargetingStack>().target = aiEnemyNPCs[randomTarget].transform;
                 needsNewTarget.NewTargetStackTarget();
             }
         }
@@ -80,7 +80,7 @@ public class AI_Team : MonoBehaviour
             GameObject thePlayer = GameObject.FindGameObjectWithTag("Player");
 
             needsNewTarget.lookTarget = thePlayer.transform;
-            needsNewTarget.aiTargetingStack.target = thePlayer.transform;
+            needsNewTarget.aiTargetingStack.GetComponent<AI_TargetingStack>().target = thePlayer.transform;
             needsNewTarget.NewTargetStackTarget();
         }
     }

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 366085030, guid: 6c3fe97f7c7cf7840845cfee747751ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 1669b0a062dc66842ab1bca41a93ebe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioObjectPrefab: {fileID: 100000, guid: 0c1c735ac5b98ad428f564386ebb50c9, type: 2}
@@ -77,6 +77,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -116,6 +117,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -155,6 +157,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -194,6 +197,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -239,6 +243,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -314,6 +319,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -353,6 +359,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -410,6 +417,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -467,6 +475,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -542,6 +551,7 @@ MonoBehaviour:
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -611,18 +621,19 @@ MonoBehaviour:
     AudioObjectPrefab: {fileID: 0}
     AudioItems:
     - Name: atmo
-      Loop: 0
+      Loop: 1
       loopSequenceCount: 0
       loopSequenceOverlap: 0
       loopSequenceRandomDelay: 0
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.23
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
       RandomDelay: 0
@@ -656,13 +667,9 @@ MonoBehaviour:
     playlistItems:
     - Bassoon
     - Flute
-    - Oboe
     - Windbells
-  musicPlaylist:
-  - Bassoon
-  - Flute
-  - Windbells
-  - Oboe
+    - Oboe
+  musicPlaylist: []
   loopPlaylist: 1
   shufflePlaylist: 0
   crossfadePlaylist: 0
@@ -674,7 +681,7 @@ MonoBehaviour:
     currentCategoryIndex: 2
     currentItemIndex: 0
     currentSubitemIndex: 0
-    currentPlaylistEntryIndex: 3
+    currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
 --- !u!1002 &11400001
 EditorExtensionImpl:

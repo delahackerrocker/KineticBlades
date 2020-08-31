@@ -4,14 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
 
-public class AI_NPC : MonoBehaviour
+public class AI_NPC : iAI_NPC
 {
-    public AI_Team myTeam;
+    // see iAI_NPC for Properties
 
-    public bool iAmTeamOne = false;
-
-    // they AI get's targets around the real target from this
-    public AI_TargetingStack aiTargetingStack;
     // this helper is part of how we track our actual heading vs direction
     protected AI_DirectionHelper aiDirectionHelper;
 
@@ -19,44 +15,10 @@ public class AI_NPC : MonoBehaviour
     public AI_DirectionHelper aiDirectionHelper_TeamOne;
     public AI_DirectionHelper aiDirectionHelper_TeamTwo;
 
-    [HideInInspector] public Transform lookTarget;
-
-    protected AI_Target aiTarget;
-
-    protected NavMeshAgent navMeshAgent;
-    public Animator animator;
-
-    public KineticBlade rightHandKineticBlade;
-
-    protected int attackStateHash = Animator.StringToHash("Attack.Attack");
-    protected int attackVariation = 0;
-
-    protected bool shouldAttackNow = false;
-    protected int attackDesire = 0;
-    protected int desireThreshold = 10;
-    protected float decisionTimer = 1f;
-    protected float strikingDistance = 2f;
-
-    [HideInInspector] public bool lockOnToggle = true;
-    [HideInInspector] public bool targetAssigned = false;
-
-    [HideInInspector] public Vector3 movementVector;
-
-    [HideInInspector] public bool killMe = false;
-
-    [HideInInspector] protected int health = 250;
-    [HideInInspector] public int healthTwo = 250;
-    [HideInInspector] protected int maxHealth = 250;
-    [HideInInspector] public int maxHealthTwo = 250;
-
-    public GameObject[] skins;
-
-    protected bool engagingTarget = false;
-
     void Start()
     {
         aiTargetingStack = Instantiate(aiTargetingStack, this.transform.position, Quaternion.identity);
-        aiTargetingStack.aiNPC = this;
+        aiTargetingStack.GetComponent<AI_TargetingStack>().aiNPC = this;
 
         if (myTeam.isTeamOne)
         {
@@ -81,10 +43,8 @@ public class AI_NPC : MonoBehaviour
 
         ChangeSkin();
     }
-    private void OnApplicationQuit() { CancelInvoke(); }
-    private void OnDestroy() { CancelInvoke(); }
 
-    public void ChangeSkin()
+    public override void ChangeSkin()
     {
         for (int index = 0; index < skins.Length - 1; index++)
         {
@@ -188,7 +148,7 @@ public class AI_NPC : MonoBehaviour
         }
     }
 
-    public void NewTargetStackTarget()
+    public override void NewTargetStackTarget()
     {
         CancelInvoke();
 
@@ -198,7 +158,7 @@ public class AI_NPC : MonoBehaviour
 
         if (shouldStayOrGo > 2)
         {
-            aiTarget = aiTargetingStack.GetRandomTarget();
+            aiTarget = aiTargetingStack.GetComponent<AI_TargetingStack>().GetRandomTarget();
             if (aiTarget != null && navMeshAgent != null && navMeshAgent.isActiveAndEnabled)
             {
                 navMeshAgent.destination = aiTarget.transform.position;

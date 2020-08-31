@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1600277411340526332}
   - component: {fileID: 14709403270523582}
-  m_Layer: 0
+  - component: {fileID: 1219224641040621714}
+  m_Layer: 12
   m_Name: KineticBlade
   m_TagString: KineticBlade
   m_Icon: {fileID: 0}
@@ -45,6 +46,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff1f7ea2e7064e44b794d10c16aa810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iAmTeamOne: 1
+  bladeRoot: {fileID: 7712397815962956531}
+--- !u!114 &1219224641040621714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600277411340526333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe041b0df7e6f74c96772acc790c004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2898581724577343731
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066719943103162544}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Handle
   m_TagString: KineticBlade
   m_Icon: {fileID: 0}
@@ -88,7 +103,7 @@ GameObject:
   - component: {fileID: 1422251558470171188}
   - component: {fileID: 5130388644184537481}
   - component: {fileID: 5605435695338163207}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Mesh
   m_TagString: KineticBlade
   m_Icon: {fileID: 0}
@@ -132,10 +147,11 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3a609ce1333642489586afd787e3f79, type: 2}
+  - {fileID: 2100000, guid: 504fdf87ced2e484fac705ab22f306f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,6 +172,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &5605435695338163207
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -180,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3676411456327217232}
   - component: {fileID: 7712397815962956531}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BladeRoot
   m_TagString: KineticBlade
   m_Icon: {fileID: 0}
@@ -215,7 +232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bladeCylinderTemplate: {fileID: 1530849071457369848, guid: 2da4719e79fcd2347a416012e932ad29,
     type: 3}
+  incrementMax: 80
   movementMagnitude: 0
   rotationMagnitude: 0
   testDisintegration: 0
   justBroke: 0
+  iAmTeamOne: 1
+  iAmPlayer: 1

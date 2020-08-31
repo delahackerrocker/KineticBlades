@@ -31,7 +31,9 @@ public class HandInventory : MonoBehaviour
 
         // turn on the next item in handItems while turning off the rest
         TurnOffAllItems();
-        TurnOnItem(++selected);
+        TurnOnItem(selected);
+
+        selected++;
     }
 
     void TurnOnItem(int selected)

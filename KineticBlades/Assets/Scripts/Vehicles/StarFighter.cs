@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class StarFighter : MonoBehaviour
 {
+    public XR_ThrustLever velocityThrust;
     public XR_Joystick attitudeJoy;
     public Transform gameWorld;
 
+    protected float rateOfChange = 32;
     void Update()
     {
-        //this.transform.Rotate(attitudeJoy.totalChangeRotationX/100, 0.0f, -attitudeJoy.totalChangeRotationZ/100, Space.Self);
-        //this.transform.Translate(attitudeJoy.totalChangeRotationZ / 100, 0.0f, -attitudeJoy.totalChangeRotationX / 100, Space.Self);
-        gameWorld.transform.Rotate(attitudeJoy.totalChangeRotationX / 100, 0.0f, -attitudeJoy.totalChangeRotationZ / 100, Space.Self);
+        gameWorld.transform.Translate(0.0f, 0.0f, -velocityThrust.grabbableZ / rateOfChange, Space.Self);
+        gameWorld.transform.Rotate(attitudeJoy.totalChangeRotationX / rateOfChange, 0.0f, -attitudeJoy.totalChangeRotationZ / rateOfChange, Space.Self);
     }
 }

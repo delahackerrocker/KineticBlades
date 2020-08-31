@@ -43,9 +43,6 @@ public class GameSceneManager : MonoBehaviour
             countdownValue -= 1;
 
             timeText.text = ConvertToMinAndSeconds(countdownValue);
-
-            progressBarImage.fillAmount = (AudioManager.instance.musicTheme.time / audioClipLength);
-
         }
         GameOver();
     }

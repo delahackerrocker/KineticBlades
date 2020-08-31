@@ -159,6 +159,6 @@ public class BladeRoot : MonoBehaviour
         movementMagnitude = 0;
         rotationMagnitude = 0;
 
-        if (iAmPlayer) AudioManager.instance.swordShatter.Play();
+        if (iAmPlayer) AudioController.Play("SliceSound", this.transform, 1); ;
     }
 }

@@ -41,8 +41,7 @@ public class Shooting : MonoBehaviour
     private void Shoot()
     {
         //Play sound
-        AudioManager.instance.gunSound.gameObject.transform.position = nozzleTransform.position;
-        AudioManager.instance.gunSound.Play();
+        AudioController.Play("gunSound", nozzleTransform, 1);
 
         //Play animation
         gunAnimator.SetTrigger("Fire");

@@ -37,17 +37,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 366085030, guid: 6c3fe97f7c7cf7840845cfee747751ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 1669b0a062dc66842ab1bca41a93ebe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   AudioObjectPrefab: {fileID: 100000, guid: 0c1c735ac5b98ad428f564386ebb50c9, type: 2}
   Persistent: 0
+  UnloadAudioClipsOnDestroy: 0
   UsePooledAudioObjects: 1
   PlayWithZeroVolume: 0
+  EqualPowerCrossfade: 0
   musicCrossFadeTime: 2
+  ambienceSoundCrossFadeTime: 0
   specifyCrossFadeInAndOutSeperately: 0
   _musicCrossFadeTime_In: 0
   _musicCrossFadeTime_Out: 0
+  _ambienceSoundCrossFadeTime_In: 0
+  _ambienceSoundCrossFadeTime_Out: 0
   AudioCategories:
   - Name: Music
     _parentCategoryName: 
@@ -57,18 +62,27 @@ MonoBehaviour:
       Loop: 1
       loopSequenceCount: 0
       loopSequenceOverlap: 0
+      loopSequenceRandomDelay: 0
+      loopSequenceRandomPitch: 0
+      loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
+      RandomVolume: 0
+      RandomPitch: 0
+      RandomDelay: 0
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
       audioSource_MaxDistance: 500
+      spatialBlend: 0
       subItems:
       - SubItemType: 0
         Probability: 1
+        DisableOtherSubitems: 0
         ItemModeAudioID: 
         Clip: {fileID: 8300000, guid: 1477e51e048525f4681ff66dac72263c, type: 3}
         Volume: 1
@@ -83,22 +97,32 @@ MonoBehaviour:
         FadeIn: 0
         FadeOut: 0
         RandomStartPosition: 0
+        individualSettings: []
     - Name: MusicTrack2
       Loop: 1
       loopSequenceCount: 0
       loopSequenceOverlap: 0
+      loopSequenceRandomDelay: 0
+      loopSequenceRandomPitch: 0
+      loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
       Delay: 0
+      PitchShift: 0
+      RandomVolume: 0
+      RandomPitch: 0
+      RandomDelay: 0
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
       audioSource_MaxDistance: 500
+      spatialBlend: 0
       subItems:
       - SubItemType: 0
         Probability: 1
+        DisableOtherSubitems: 0
         ItemModeAudioID: 
         Clip: {fileID: 8300000, guid: f346b651c066c2046858fa9f34f2c67a, type: 3}
         Volume: 1
@@ -113,12 +137,17 @@ MonoBehaviour:
         FadeIn: 0
         FadeOut: 0
         RandomStartPosition: 0
+        individualSettings: []
     _volume: 1
-  musicPlaylist:
-  - Bassoon
-  - Flute
-  - Windbells
-  - Oboe
+    audioMixerGroup: {fileID: 0}
+  musicPlaylists:
+  - name: Default
+    playlistItems:
+    - Bassoon
+    - Flute
+    - Windbells
+    - Oboe
+  musicPlaylist: []
   loopPlaylist: 1
   shufflePlaylist: 0
   crossfadePlaylist: 0
@@ -130,6 +159,7 @@ MonoBehaviour:
     currentCategoryIndex: 0
     currentItemIndex: 1
     currentSubitemIndex: 0
+    currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
 --- !u!1001 &100100000
 Prefab:

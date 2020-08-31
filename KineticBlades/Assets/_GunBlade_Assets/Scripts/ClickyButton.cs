@@ -65,9 +65,7 @@ public class ClickyButton : MonoBehaviour
         GetComponent<MeshRenderer>().material = greenMat;
         GetComponent<Collider>().isTrigger = true;
 
-        ////Playing Sound
-        AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
-        AudioManager.instance.buttonClickSound.Play();
+        AudioController.Play("3DButtonClickSound", transform, 1);
 
         Invoke("Reset", .1f);
     }
@@ -80,8 +78,7 @@ public class ClickyButton : MonoBehaviour
 
             if (!soundPlayed)
             {
-                AudioManager.instance.buttonClickSound.gameObject.transform.position = transform.position;
-                AudioManager.instance.buttonClickSound.Play();
+                AudioController.Play("3DButtonClickSound", transform, 1);
 
                 VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.LTouch);
                 VibrationManager.instance.VibrateController(.1f, .1f, .1f, OVRInput.Controller.RTouch);

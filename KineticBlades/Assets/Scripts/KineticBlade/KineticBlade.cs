@@ -6,13 +6,18 @@ public class KineticBlade : HandItem
 {
     public bool iAmTeamOne = false;
 
+    public BladeRoot bladeRoot;
+
     public void SetTeam(bool isTeamOne)
     {
         iAmTeamOne = isTeamOne;
     }
     public void Disintegrate()
     {
-        if (GetComponent<BladeRoot>() != null)
+        if (bladeRoot != null)
+        {
+            bladeRoot.Disintegrate();
+        } else if (GetComponent<BladeRoot>() != null)
         {
             GetComponent<BladeRoot>().Disintegrate();
         }
