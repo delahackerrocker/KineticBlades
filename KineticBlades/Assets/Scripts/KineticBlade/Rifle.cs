@@ -56,7 +56,7 @@ public class Rifle : MonoBehaviour
             VibrationManager.instance.VibrateController(.05f, .3f, .3f, OVRInput.Controller.LTouch);
 
             //Create the bullet
-            GameObject bulletGameobject = Instantiate(bulletPrefab, nozzleTransform.localPosition, Quaternion.Euler(0, 0, 0));
+            GameObject bulletGameobject = Instantiate(bulletPrefab, nozzleTransform.position, Quaternion.Euler(0, 0, 0));
             bulletGameobject.transform.forward = nozzleTransform.forward;
 
             ammoDisplay.text = "" + --ammo;

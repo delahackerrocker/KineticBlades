@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandInventory : MonoBehaviour
 {
     [SerializeField]
-    private OVRInput.Controller m_controller = OVRInput.Controller.None;    // set in inspector
+    public OVRInput.Touch controllerInput = OVRInput.Touch.None;    // set in inspector
 
     protected int selected = 0;
     public HandItem[] handItems;
@@ -19,7 +19,7 @@ public class HandInventory : MonoBehaviour
     void Update()
     {
         // The player can use their button on their right controller to change swords
-        if (OVRInput.GetDown(OVRInput.Button.Two, m_controller))
+        if (OVRInput.GetDown(controllerInput))
         {
             NextItem();
         }
