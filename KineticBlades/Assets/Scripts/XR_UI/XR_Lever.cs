@@ -18,7 +18,8 @@ public class XR_Lever : MonoBehaviour
     public float increment = 0.0f;
     public float normalizedValue = 0.0f;
 
-    public bool isUsingGrabberOverride = false; // for testing without the headset, and manual overrides
+    // for testing without the headset, and manual overrides
+    public bool isUsingGrabberOverride = false;
 
     void Start()
     {
