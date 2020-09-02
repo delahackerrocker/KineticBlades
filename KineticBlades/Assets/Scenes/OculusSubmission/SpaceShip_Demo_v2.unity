@@ -15163,7 +15163,7 @@ PrefabInstance:
         type: 3}
       propertyPath: handItems.Array.data[1]
       value: 
-      objectReference: {fileID: 503084261}
+      objectReference: {fileID: 0}
     - target: {fileID: 8213652936853305667, guid: cf82d74d77b8e444996e65fcddab9ba2,
         type: 3}
       propertyPath: handItems.Array.data[0]
@@ -15247,18 +15247,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 503084259}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &503084261 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6215532716111294258, guid: cf82d74d77b8e444996e65fcddab9ba2,
-    type: 3}
-  m_PrefabInstance: {fileID: 503084259}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe041b0df7e6f74c96772acc790c004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &503084263 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5658263533644404604, guid: cf82d74d77b8e444996e65fcddab9ba2,
@@ -23091,7 +23079,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 371431195bea08743838ed7a6c728439, type: 3}
     - target: {fileID: 11400000, guid: ec999f72f6204364aabb6d24a13dfd4c, type: 3}
       propertyPath: _volume
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec999f72f6204364aabb6d24a13dfd4c, type: 3}
@@ -45807,12 +45795,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad20ca03227a374fa44c9ae60608b6c, type: 3}
---- !u!82 &1491086799 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4523097321205281099, guid: a454e2941ed7c4642a7e84dbf673fe55,
-    type: 3}
-  m_PrefabInstance: {fileID: 98477683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1491201049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57033,11 +57015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b539a71ab2b12444485b265e1f6e6589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliceSound: {fileID: 1830600552}
-  gunSound: {fileID: 1491086799}
-  musicTheme: {fileID: 1332251871}
-  buttonClickSound: {fileID: 461697741}
-  swordShatter: {fileID: 1830600552}
 --- !u!1001 &1874175341
 PrefabInstance:
   m_ObjectHideFlags: 0
