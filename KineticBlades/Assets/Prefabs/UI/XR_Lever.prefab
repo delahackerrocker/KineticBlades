@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 2148682129184365971}
   - component: {fileID: 2148682129184365969}
   - component: {fileID: 2148682129184365970}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   - component: {fileID: 2148682129604876287}
   - component: {fileID: 2148682129604876285}
   - component: {fileID: 2148682129604876286}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 2148682130091752405}
   - component: {fileID: 2148682130091752406}
   - component: {fileID: 2148682130091752407}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: UI_Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -960,7 +960,7 @@ GameObject:
   - component: {fileID: 2148682130121304806}
   - component: {fileID: 2148682130121304807}
   - component: {fileID: 2148682130121304800}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: UI_LeverValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2148682130694775372}
   - component: {fileID: 1451362108224832676}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   changeInPosition: 0
   increment: 0
   normalizedValue: 0
+  isUsingGrabberOverride: 0
 --- !u!1 &2150443116042775734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1197,7 @@ GameObject:
   - component: {fileID: 2143993481225174452}
   - component: {fileID: 2136922489766194118}
   - component: {fileID: 2126732055737616792}
+  - component: {fileID: 3537835564356146192}
   m_Layer: 0
   m_Name: SM_Prop_Atm_01 (5)
   m_TagString: Untagged
@@ -1266,3 +1268,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3537835564356146192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150443116042775734}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 2.2656069, z: 0.36}
+  m_Center: {x: 0.0000004917383, y: 1.1328034, z: -0.05}

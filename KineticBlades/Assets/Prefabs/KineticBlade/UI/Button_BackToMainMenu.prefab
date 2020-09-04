@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7397596184010409981}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: Button_BackToMainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7397596184010409980}
-  m_LocalRotation: {x: 0.15741524, y: 0.6893624, z: 0.15741518, w: 0.6893624}
+  m_LocalRotation: {x: 0.15741652, y: 0.6893621, z: 0.15741652, w: 0.6893621}
   m_LocalPosition: {x: 0.3848, y: -0.3364, z: -0.0259}
-  m_LocalScale: {x: 0.36001542, y: 0.36001542, z: 0.36001542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7397596184827633410}
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7397596184346860626}
   - component: {fileID: 7397596184346860624}
   - component: {fileID: 7397596184346860627}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7397596184827633410}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: PushableButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7397596185262196453}
   - component: {fileID: 7397596185262196450}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: ButtonClickSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 7397596185598129231}
   - component: {fileID: 7397596185598129230}
   - component: {fileID: 7397596185598129217}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: MainPushableButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ MonoBehaviour:
   isClicked: 0
   soundPlayed: 0
   greenMat: {fileID: 2100000, guid: 2fd69377da1f8f74f9f50d86181ae851, type: 2}
-  timeCountDownCanvas: {fileID: 0}
+  timeCountDownCanvas: {fileID: 7397596185957779676}
   timeText: {fileID: 7397596184346860627}
   smooth: 10
   nowTesting: 0
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 7397596185879075189}
   - component: {fileID: 7397596185879075188}
   - component: {fileID: 7397596185879075191}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: BackButton
   m_TagString: BackButton
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 7397596185957779672}
   - component: {fileID: 7397596185957779675}
   - component: {fileID: 7397596185957779674}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: UI_2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8528402953708049342}
-  m_Layer: 15
+  m_Layer: 5
   m_Name: FadeTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,8 @@ public enum LevelToLoad
     MissionDemo,
     TeamArenaDemo,
     StarFighter_01,
-    StarFighter_02
+    StarFighter_02,
+    DressingRoom
 }
 
 public class ButtonPushClick : MonoBehaviour
@@ -41,7 +42,7 @@ public class ButtonPushClick : MonoBehaviour
         // Start with button up top / popped up
         defaultPosition = transform.localPosition = new Vector3(transform.localPosition.x, MaxLocalY, transform.localPosition.z);
 
-        timeCountDownCanvas.SetActive(false);
+        //timeCountDownCanvas.SetActive(false);
 
     }
 
@@ -122,6 +123,10 @@ public class ButtonPushClick : MonoBehaviour
         else if (levelToLoad == LevelToLoad.StarFighter_02)
         {
             SceneLoader.instance.LoadScene("StarFighter_Demo_02");
+        }
+        else if (levelToLoad == LevelToLoad.DressingRoom)
+        {
+            SceneLoader.instance.LoadScene("DressingRoom");
         }
     }
 

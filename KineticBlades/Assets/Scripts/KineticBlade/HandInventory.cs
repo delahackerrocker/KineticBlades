@@ -19,7 +19,7 @@ public class HandInventory : MonoBehaviour
     void Update()
     {
         // The player can use their button on their right controller to change swords
-        if (OVRInput.GetDown(controllerInput))
+        if (OVRInput.GetUp(controllerInput))
         {
             NextItem();
         }
